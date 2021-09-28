@@ -15,7 +15,11 @@ export const NavbarMobile = () => {
                     <img src='./logo-verde.jpg' alt='logo-mutual' />
                 </div>
                 <div onClick={handleClick}>
-                    {navClicked ? <MenuRoundedIcon /> : <MenuOpenRoundedIcon />}
+                    {navClicked ? (
+                        <MenuRoundedIcon style={{ cursor: 'pointer' }} />
+                    ) : (
+                        <MenuOpenRoundedIcon style={{ cursor: 'pointer' }} />
+                    )}
                 </div>
             </nav>
             <ul className={navClicked ? 'navbar-mobile-menu' : 'navbar-mobile-menu active'}>
