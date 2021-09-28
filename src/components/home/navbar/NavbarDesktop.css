@@ -22,11 +22,15 @@
     font-size: calc(0.4rem + 1vmin);
     list-style: none;
     color: #71808c;
+    transition: all 0.2s ease;
 }
 
 .navbar-items li {
     padding-left: 0rem;
     margin-left: 2rem;
+}
+.navbar-items li a:hover {
+    color: #bed700;
 }
 
 .logo {
@@ -35,6 +39,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 img {

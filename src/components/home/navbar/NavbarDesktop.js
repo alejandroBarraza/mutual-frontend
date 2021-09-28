@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
-import { green } from '@material-ui/core/colors';
+// import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
+// import { green } from '@material-ui/core/colors';
 import { NavbarItem } from './NavbarItem';
 import './NavbarDesktop.css';
 import '../../../container.css';
@@ -22,7 +22,7 @@ export const NavbarbarDesktop = () => {
                         </li>
                     ))}
                 </ul>
-                <AccountCircleRoundedIcon style={{ color: green[300] }} />
+                {/* <AccountCircleRoundedIcon style={{ color: green[300] }} /> */}
             </nav>
         </div>
     );
