@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
-// import { green } from '@material-ui/core/colors';
 import { NavbarItem } from './NavbarItem';
 import './NavbarDesktop.css';
 import '../../../container.css';
@@ -11,7 +9,7 @@ export const NavbarbarDesktop = () => {
         <div className='wrapper'>
             <nav className='navbar container '>
                 <div className='logo'>
-                    <img src='./logo-verde.jpg' alt='logo-mutual' />
+                    <img src='./mutual-svg.svg' alt='logo-mutual' />
                 </div>
                 <ul className='navbar-items'>
                     {NavbarItem.map((item, index) => (
@@ -22,7 +20,6 @@ export const NavbarbarDesktop = () => {
                         </li>
                     ))}
                 </ul>
-                {/* <AccountCircleRoundedIcon style={{ color: green[300] }} /> */}
             </nav>
         </div>
     );
