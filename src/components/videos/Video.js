@@ -8,11 +8,14 @@ export const Video = () => {
     console.log(urlId);
     return (
         <div className='container'>
-            <h2 className='title-video'>Mutual de Seguridad</h2>
+            <h2 className='title-video'>
+                Contribuir a la protección de los trabajadores es nuestra razón de existir
+            </h2>
             <p className='description-video'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel deserunt ipsa
-                voluptatem, optio placeat tenetur, veritatis ab eveniet facilis vero repudiandae
-                illo! Quaerat, expedita rerum.
+                Nos regimos por la Ley 16.744 entregando asesoría a empresas en prevención de
+                accidentes laborales y enfermedades profesionales. Brindamos atención de salud a los
+                trabajadores en caso de ocurrir un siniestro, acompañamos al trabajador en el
+                reintegro a sus labores, así como el pago de subsidios y pensiones.
             </p>
             <YoutubeEmbed embedId={urlId} />
         </div>

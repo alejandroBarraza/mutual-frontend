@@ -6,9 +6,13 @@
     z-index: 0;
 }
 .container-video iframe {
+    align-items: center;
+    border-radius: 10px;
+    height: 90%;
+    justify-content: center;
     left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
+    margin: auto;
     position: absolute;
+    top: 0;
+    width: 100%;
 }
