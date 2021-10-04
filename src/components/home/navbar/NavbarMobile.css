@@ -30,6 +30,7 @@ img {
 }
 
 .navbar-mobile-menu {
+    z-index: 1;
     height: 92vh;
     display: flex;
     flex: 1;

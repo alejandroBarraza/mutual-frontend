@@ -1,5 +1,5 @@
 import React from 'react';
-import { useViewport } from '../../hooks/useViewport';
+import { useViewport } from '../../../hooks/useViewport';
 import { NavbarbarDesktop } from './NavbarDesktop';
 import { NavbarMobile } from './NavbarMobile';
 
