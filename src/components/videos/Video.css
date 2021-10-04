@@ -2,6 +2,7 @@
     margin: 2rem 0 0.5rem 0;
     font-size: var(--font-size-h4);
     background: -webkit-linear-gradient(#607e06, #91b722);
+    text-align: center;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

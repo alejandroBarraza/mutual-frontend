@@ -3,20 +3,19 @@ import '../../container.css';
 import { youtube_parser } from '../../helpers/youtubeParser';
 import './Video.css';
 import { YoutubeEmbed } from './YoutubeEmbed';
+import { useQuery } from '@apollo/client';
+import { GETVIDEOS } from '../../Graphql/Queries';
+
 export const Video = () => {
-    const urlId = youtube_parser('https://www.youtube.com/watch?v=rokGy0huYEA&t=2s');
-    console.log(urlId);
+    const { data, loading, error } = useQuery(GETVIDEOS);
+    if (loading) return <p>loading....</p>;
+    if (error) return <p>{error}</p>;
+
+    const urlId = youtube_parser(data.videos[0].links);
     return (
         <div className='container'>
-            <h2 className='title-video'>
-                Contribuir a la protección de los trabajadores es nuestra razón de existir
-            </h2>
-            <p className='description-video'>
-                Nos regimos por la Ley 16.744 entregando asesoría a empresas en prevención de
-                accidentes laborales y enfermedades profesionales. Brindamos atención de salud a los
-                trabajadores en caso de ocurrir un siniestro, acompañamos al trabajador en el
-                reintegro a sus labores, así como el pago de subsidios y pensiones.
-            </p>
+            <h2 className='title-video'>{data.videos[0].titulo}</h2>
+            <p className='description-video'>{data.videos[0].descripcion}</p>
             <YoutubeEmbed embedId={urlId} />
         </div>
     );
