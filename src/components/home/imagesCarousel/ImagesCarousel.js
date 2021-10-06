@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./carrusel.css";
+import "./imagesCarousel.css";
 import { Carousel } from 'react-carousel-minimal';
 import { useQuery, gql } from '@apollo/client';
 import { CircularProgress } from '@material-ui/core';
@@ -24,7 +24,7 @@ const IMAGES = gql`
  * This component returns a carousel of images from the main page.
  * @returns Carousel of images.
  */
-export const Carrusel = () => {
+export const ImagesCarousel = () => {
 
    /**
     * Database query.

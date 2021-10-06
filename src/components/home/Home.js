@@ -1,12 +1,12 @@
 import React from 'react';
 import { Video } from '../videos/Video';
-import { Carrusel } from './carrusel/Carrusel';
+import { ImagesCarousel } from './imagesCarousel/ImagesCarousel';
 
 export const Home = () => {
     return (
         <>
-            <Carrusel />
-            {/* <Video /> */}
+            <ImagesCarousel />
+            <Video />
         </>
     );
 };
