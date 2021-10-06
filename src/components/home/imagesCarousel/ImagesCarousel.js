@@ -9,14 +9,12 @@ import { CircularProgress } from '@material-ui/core';
  */
 const IMAGES = gql`
    query GetCarrousel {
-      carrousels{
-         carrusel_imagen{
-            url
-         }
-      }
-      textoCarrusel{
+      carrusel {
          titulo
          descripcion
+         imagenes{
+            url
+         }
       }
    }`
 
@@ -35,13 +33,20 @@ export const ImagesCarousel = () => {
    const { loading, error, data } = useQuery(IMAGES)
 
    // Images of the Carrousel
-   const images = data ? data.carrousels[0].carrusel_imagen.map((img) => { return { image: `${img.url}` } }) : [];
+   const images = data ?
+      ((data.carrusel === null) ? [{ image: 'https://kinsta.com/es/wp-content/uploads/sites/8/2017/08/error-de-conexi%C3%B3n-base-de-datos.png' }]
+         : data.carrusel.imagenes.map((img) => { return { image: `${img.url}` } }))
+      : [];
 
    // Carousel Title
-   const titleCarousel = data ? data.textoCarrusel.titulo : 'Loading.....';
+   const titleCarousel = data ?
+      ((data.carrusel === null) ? 'No existen datos disponibles' : data.carrusel.titulo)
+      : 'Loading.....';
 
    // Carousel Description
-   const descriptionCarousel = data ? data.textoCarrusel.descripcion : 'Loading.....';
+   const descriptionCarousel = data ?
+      ((data.carrusel === null) ? 'No existen datos disponibles' : data.carrusel.descripcion)
+      : 'Loading.....';
 
    // If there is an error, an error message is displayed.
    if (error) { return <p>  Error </p> };
