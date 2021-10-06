@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import "./imagesCarousel.css";
 import { Carousel } from 'react-carousel-minimal';
 import { useQuery, gql } from '@apollo/client';
