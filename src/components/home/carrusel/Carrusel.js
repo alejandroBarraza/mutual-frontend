@@ -5,7 +5,7 @@ import { useQuery, gql } from '@apollo/client';
 import { CircularProgress } from '@material-ui/core';
 
 /**
- * Consulta Graphql a la base de datos.
+ * Graphql query to the database.
  */
 const IMAGES = gql`
    query GetCarrousel {
@@ -21,25 +21,29 @@ const IMAGES = gql`
    }`
 
 /**
- * Este componente retorna un carrusel de imagenes de la pagina princpal
- * @returns Carrusel de imagenes.
+ * This component returns a carousel of images from the main page.
+ * @returns Carousel of images.
  */
 export const Carrusel = () => {
 
    /**
-    * Consulta a la base de datos.
-    * @param loading indica si aun se estan descargando los datos
-    * @param error indica si ocurrio algun error
-    * @param data los datos retornados por la base de datos 
+    * Database query.
+    * @param loading indicates if data are still being downloaded.
+    * @param error indicates if any error occurred.
+    * @param data the data returned by the database.
     */
    const { loading, error, data } = useQuery(IMAGES)
 
-   // 
+   // Images of the Carrousel
    const images = data ? data.carrousels[0].carrusel_imagen.map((img) => { return { image: `${img.url}` } }) : [];
+
+   // Carousel Title
    const titleCarousel = data ? data.textoCarrusel.titulo : 'Loading.....';
+
+   // Carousel Description
    const descriptionCarousel = data ? data.textoCarrusel.descripcion : 'Loading.....';
 
-   // Si existe un error despliega un mensaje de error.
+   // If there is an error, an error message is displayed.
    if (error) { return <p>  Error </p> };
 
    return (
@@ -51,9 +55,11 @@ export const Carrusel = () => {
             </div>
             <div className='gallery__images'>
                {
-                  // Si esta cargando retorna un Componente de Progreso sino retorna el Componente con los datos correspondientes.
+                  // If it is loading it returns a Progress Component, otherwise it returns the Component with the corresponding data.
                   loading ?
-                     <div className='loading__icon'><CircularProgress /></div> :
+                     <div className='loading__icon'>
+                        <CircularProgress />
+                     </div> :
                      <Carousel
                         data={images}
                         time={5000}
