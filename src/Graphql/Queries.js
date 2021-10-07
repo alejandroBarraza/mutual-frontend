@@ -11,3 +11,14 @@ export const GETVIDEOS = gql`
         }
     }
 `;
+
+//statistic query(always get last 4 created)
+export const GETSTATISTICS = gql`
+    query GetStatistic {
+        statistics(limit: 4, sort: "created_at:asc") {
+            titulo
+            descripcion
+            created_at
+        }
+    }
+`;
