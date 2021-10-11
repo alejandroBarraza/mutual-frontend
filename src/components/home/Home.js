@@ -6,6 +6,7 @@ import { ImagesCarousel } from './imagesCarousel/ImagesCarousel';
 export const Home = () => {
     return (
         <>
+            <ImagesCarousel />
             <Video />
             <Statistics />
         </>
