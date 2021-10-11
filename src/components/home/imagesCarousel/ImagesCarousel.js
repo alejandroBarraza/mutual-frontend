@@ -48,20 +48,20 @@ export const ImagesCarousel = () => {
       : 'Loading...';
 
    // If there is an error, an error message is displayed.
-   if (error) { return <p>  Error al obtener los datos de base de datos. </p> };
+   if (error) { return <p>  Error en la base de datos. </p> };
 
    return (
       <div className="container__gallery">
          <div className='gallery'>
             <div className='gallery__text'>
-               <h1>{titleCarousel}</h1>
-               <p className='text'>{descriptionCarousel}</p>
+               <h1 id='titleCarousel'>{titleCarousel}</h1>
+               <p id='descriptionCarousel' className='text'>{descriptionCarousel}</p>
             </div>
-            <div className='gallery__images'>
+            <div id='gallery__images' className='gallery__images'>
                {
                   // If it is loading it returns a Progress Component, otherwise it returns the Component with the corresponding data.
                   loading ?
-                     <div className='loading__icon'>
+                     <div id='loading__icon' className='loading__icon'>
                         <CircularProgress />
                      </div> :
                      <Carousel

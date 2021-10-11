@@ -6,7 +6,7 @@ export const Home = () => {
     return (
         <>
             <ImagesCarousel />
-            <Video />
+            {/* <Video /> */}
         </>
     );
 };

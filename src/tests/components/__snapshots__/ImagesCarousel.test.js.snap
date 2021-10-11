@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders loaded correctly 1`] = `
+exports[`test in <ImagesCarousel /> component renders loaded correctly 1`] = `
 <div>
   <div
     class="container__gallery"
@@ -11,17 +11,21 @@ exports[`renders loaded correctly 1`] = `
       <div
         class="gallery__text"
       >
-        <h1>
+        <h1
+          id="titleCarousel"
+        >
           Titulo del Carrusel
         </h1>
         <p
           class="text"
+          id="descriptionCarousel"
         >
           Suspendisse potenti. Praesent sed tristique turpis. Aliquam quis ullamcorper nulla, eu dignissim urna. Fusce id quam eget sem pulvinar euismod et vel velit. Cras a sapien sit amet nulla lobortis ultricies. Pellentesque quis risus nec orci tincidunt fringilla. Nulla ut consequat libero, in gravida augue.
         </p>
       </div>
       <div
         class="gallery__images"
+        id="gallery__images"
       >
         <div
           class="box"
@@ -48,32 +52,6 @@ exports[`renders loaded correctly 1`] = `
                     class="carousel-caption-bottom"
                   />
                 </div>
-                <div
-                  class="carousel-item fade"
-                  style="max-width: 600px; max-height: 400px; display: none;"
-                >
-                  <img
-                    class="carousel-image"
-                    src="https://res.cloudinary.com/dkfgeruxd/image/upload/v1633210264/IMG_20210917_211421_038627f95d.jpg"
-                    style="border-radius: 16px; object-fit: cover;"
-                  />
-                  <div
-                    class="carousel-caption-bottom"
-                  />
-                </div>
-                <div
-                  class="carousel-item fade"
-                  style="max-width: 600px; max-height: 400px; display: none;"
-                >
-                  <img
-                    class="carousel-image"
-                    src="https://res.cloudinary.com/dkfgeruxd/image/upload/v1633210264/IMG_20210917_211411_fa1f6dcd37.jpg"
-                    style="border-radius: 16px; object-fit: cover;"
-                  />
-                  <div
-                    class="carousel-caption-bottom"
-                  />
-                </div>
                 <a
                   class="prev"
                 >
@@ -90,12 +68,6 @@ exports[`renders loaded correctly 1`] = `
                   <span
                     class="dot active"
                   />
-                  <span
-                    class="dot"
-                  />
-                  <span
-                    class="dot"
-                  />
                 </div>
               </div>
             </div>
@@ -107,7 +79,7 @@ exports[`renders loaded correctly 1`] = `
 </div>
 `;
 
-exports[`renders loading correctly 1`] = `
+exports[`test in <ImagesCarousel /> component renders loaded with error 1`] = `
 <div>
   <div
     class="container__gallery"
@@ -118,20 +90,87 @@ exports[`renders loading correctly 1`] = `
       <div
         class="gallery__text"
       >
-        <h1>
+        <h1
+          id="titleCarousel"
+        >
           Loading...
         </h1>
         <p
           class="text"
+          id="descriptionCarousel"
         >
           Loading...
         </p>
       </div>
       <div
         class="gallery__images"
+        id="gallery__images"
+      >
+        <div
+          class="box"
+          style="text-align: center; width: 100%; max-width: 600px; max-height: 600px; margin: auto auto; overflow-y: true;"
+        >
+          <div
+            style="max-width: 600px; max-height: 400px;"
+          >
+            <div>
+              <div
+                class="carousel-container"
+                style="max-width: 600px; height: 400px; background-color: darkgrey; border-radius: 16px;"
+              >
+                <a
+                  class="prev"
+                >
+                  ❮
+                </a>
+                <a
+                  class="next"
+                >
+                  ❯
+                </a>
+                <div
+                  class="dots"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test in <ImagesCarousel /> component renders loading correctly 1`] = `
+<div>
+  <div
+    class="container__gallery"
+  >
+    <div
+      class="gallery"
+    >
+      <div
+        class="gallery__text"
+      >
+        <h1
+          id="titleCarousel"
+        >
+          Loading...
+        </h1>
+        <p
+          class="text"
+          id="descriptionCarousel"
+        >
+          Loading...
+        </p>
+      </div>
+      <div
+        class="gallery__images"
+        id="gallery__images"
       >
         <div
           class="loading__icon"
+          id="loading__icon"
         >
           <div
             class="MuiCircularProgress-root MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
