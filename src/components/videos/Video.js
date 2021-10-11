@@ -1,5 +1,4 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
 import { YoutubeEmbed } from './YoutubeEmbed';
 import { GETVIDEOS } from '../../Graphql/Queries';
 import './Video.css';
