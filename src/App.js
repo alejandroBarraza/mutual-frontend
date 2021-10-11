@@ -3,7 +3,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import './App.css';
 import { AppRouter } from './routers/AppRouter';
 
-const client = new ApolloClient({
+export const client = new ApolloClient({
     uri: 'http://localhost:1337/graphql',
     cache: new InMemoryCache(),
 });

@@ -7,8 +7,8 @@ import { CircularProgress } from '@material-ui/core';
 /**
  * Graphql query to the database.
  */
-const IMAGES = gql`
-   query GetCarrousel {
+export const IMAGES = gql`
+   query GetCarrusel {
       carrusel {
          titulo
          descripcion
@@ -16,14 +16,13 @@ const IMAGES = gql`
             url
          }
       }
-   }`
+   }`;
 
 /**
  * This component returns a carousel of images from the main page.
  * @returns Carousel of images.
  */
 export const ImagesCarousel = () => {
-
    /**
     * Database query.
     * @param loading indicates if data are still being downloaded.
@@ -41,15 +40,15 @@ export const ImagesCarousel = () => {
    // Carousel Title
    const titleCarousel = data ?
       ((data.carrusel === null) ? 'No existen datos disponibles' : data.carrusel.titulo)
-      : 'Loading.....';
+      : 'Loading...';
 
    // Carousel Description
    const descriptionCarousel = data ?
       ((data.carrusel === null) ? 'No existen datos disponibles' : data.carrusel.descripcion)
-      : 'Loading.....';
+      : 'Loading...';
 
    // If there is an error, an error message is displayed.
-   if (error) { return <p>  Error </p> };
+   if (error) { return <p>  Error al obtener los datos de base de datos. </p> };
 
    return (
       <div className="container__gallery">
