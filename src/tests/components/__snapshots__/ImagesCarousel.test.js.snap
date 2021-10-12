@@ -81,63 +81,9 @@ exports[`test in <ImagesCarousel /> component renders loaded correctly 1`] = `
 
 exports[`test in <ImagesCarousel /> component renders loaded with error 1`] = `
 <div>
-  <div
-    class="container__gallery"
-  >
-    <div
-      class="gallery"
-    >
-      <div
-        class="gallery__text"
-      >
-        <h1
-          id="titleCarousel"
-        >
-          Loading...
-        </h1>
-        <p
-          class="text"
-          id="descriptionCarousel"
-        >
-          Loading...
-        </p>
-      </div>
-      <div
-        class="gallery__images"
-        id="gallery__images"
-      >
-        <div
-          class="box"
-          style="text-align: center; width: 100%; max-width: 600px; max-height: 600px; margin: auto auto; overflow-y: true;"
-        >
-          <div
-            style="max-width: 600px; max-height: 400px;"
-          >
-            <div>
-              <div
-                class="carousel-container"
-                style="max-width: 600px; height: 400px; background-color: darkgrey; border-radius: 16px;"
-              >
-                <a
-                  class="prev"
-                >
-                  ❮
-                </a>
-                <a
-                  class="next"
-                >
-                  ❯
-                </a>
-                <div
-                  class="dots"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <p>
+      Error en la base de datos. 
+  </p>
 </div>
 `;
 

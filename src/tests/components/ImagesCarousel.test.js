@@ -64,34 +64,29 @@ describe('test in <ImagesCarousel /> component', () => {
       expect(images).not.toMatch(circularProgress);
    });
 
-   // test('renders loaded with error', async () => {
+   test('renders loaded with error', async () => {
 
-   //    const error = 'No existen datos disponibles';
-   //    const mocks_2 = [
-   //       {
-   //          request: {
-   //             query: IMAGES,
-   //          },
-   //          error: new Error('No existen datos disponibles')
-   //       },
-   //    ];
+      const error = 'Error en la base de datos';
+      const mocks_2 = [
+         {
+            request: {
+               query: IMAGES,
+            },
+            error: new Error('An error occurred')
+         },
+      ];
 
-   //    const { container } = render(
-   //       <MockedProvider mocks={mocks_2}>
-   //          <ImagesCarousel />
-   //       </MockedProvider>
-   //    );
-   //    await waitFor(() => new Promise((res) => setTimeout(res, 0)));
-
-   //    const title = JSON.stringify(container.getElementsByTagName('h1').namedItem('titleCarousel').innerHTML);
-   //    const description = JSON.stringify(container.getElementsByTagName('p').namedItem('descriptionCarousel').innerHTML);
-   //    const images = container.getElementsByTagName('div').namedItem('gallery__images').innerHTML;
-   //    const circularProgress = render(< CircularProgress />).container.innerHTML;
-
-   //    expect(container).toMatchSnapshot();
-   //    expect(title).toMatch(error);
-   //    expect(images).not.toMatch(circularProgress);
-   // });
+      const component = render(
+         <MockedProvider mocks={mocks_2}>
+            <ImagesCarousel />
+         </MockedProvider>
+      );
+      await waitFor(() => new Promise((res) => setTimeout(res, 0)));
+      const container = component.container;
+      const error_data = JSON.stringify(container.innerHTML);
+      expect(error_data).toContain(error);
+      expect(container).toMatchSnapshot();
+   });
 
 })
 
