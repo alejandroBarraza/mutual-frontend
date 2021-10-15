@@ -33,4 +33,12 @@ describe('testing <Navbar/> component', () => {
             expect(navbarMobileClass).toBe(true);
         }
     });
+    it('should match snapshot', () => {
+        const { container } = render(
+            <Router>
+                <NavbarbarDesktop />
+            </Router>
+        );
+        expect(container).toMatchSnapshot();
+    });
 });

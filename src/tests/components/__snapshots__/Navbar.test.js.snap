@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing <Navbar/> component should match snapshot 1`] = `
+<div>
+  <div
+    class="wrapper"
+  >
+    <nav
+      class="navbar container "
+    >
+      <div
+        class="logo"
+      >
+        <img
+          alt="logo-mutual"
+          src="./mutual-svg.svg"
+        />
+      </div>
+      <ul
+        class="navbar-items"
+      >
+        <li>
+          <a
+            class="navbar-items"
+            href="/noticias"
+          >
+            Noticias
+          </a>
+        </li>
+        <li>
+          <a
+            class="navbar-items"
+            href="/admin"
+          >
+            Testimonios
+          </a>
+        </li>
+        <li>
+          <a
+            class="navbar-items"
+            href="/"
+          >
+            Casos
+          </a>
+        </li>
+        <li>
+          <a
+            class="navbar-items"
+            href="/"
+          >
+            Descargables
+          </a>
+        </li>
+        <li>
+          <a
+            class="navbar-items"
+            href="/"
+          >
+            Contactanos
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;
