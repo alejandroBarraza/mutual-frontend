@@ -16,22 +16,22 @@ export const StatisticCard = () => {
             {({ data: { statistics } }) => {
                 return (
                     <>
-                        <div className='card' key={statistics[0].titulo}>
+                        <div className='card'>
                             <FontAwesomeIcon icon={faHandHoldingHeart} className='icon-style' />
                             <h2>{statistics[0].titulo}</h2>
                             <p>{statistics[0].descripcion}</p>
                         </div>
-                        <div className='card' key={statistics[1].titulo}>
+                        <div className='card'>
                             <FontAwesomeIcon icon={faHandshake} className='icon-style' />
                             <h2>{statistics[1].titulo}</h2>
                             <p>{statistics[1].descripcion}</p>
                         </div>
-                        <div className='card' key={statistics[2].titulo}>
+                        <div className='card'>
                             <FontAwesomeIcon icon={faStar} className='icon-style' />
                             <h2>{statistics[2].titulo}</h2>
                             <p>{statistics[2].descripcion}</p>
                         </div>
-                        <div className='card' key={statistics[3].titulo}>
+                        <div className='card'>
                             <FontAwesomeIcon icon={faUserPlus} className='icon-style' />
                             <h2>{statistics[3].titulo}</h2>
                             <p>{statistics[3].descripcion}</p>
