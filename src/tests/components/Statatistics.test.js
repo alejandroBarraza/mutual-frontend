@@ -1,8 +1,8 @@
 import { render, cleanup, waitFor } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
-import { GETSTATISTICS } from '../Graphql/Queries';
-import { Statistics } from '../components/statistics/Statistics';
-import { Loading } from '../components/utils/Loading';
+import { GETSTATISTICS } from '../../Graphql/Queries';
+import { Statistics } from '../../components/statistics/Statistics';
+import { Loading } from '../../components/utils/Loading';
 
 afterEach(cleanup);
 const mocks = [
