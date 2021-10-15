@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <Videos/> component at error,loading and data fetched states. should match <Video/> component with Snaphshot 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <h2
+      class="title-video"
+    >
+      mutual lo mejor de chile
+    </h2>
+    <p
+      class="description-video"
+    >
+      mutual
+    </p>
+    <div
+      class="container-video"
+    >
+      <iframe
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen=""
+        frameborder="0"
+        height="480"
+        src="https://www.youtube.com/embed/NrO0CJCbYLA"
+        title="Embedded youtube"
+        width="853"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Testing <Videos/> component at error,loading and data fetched states. should render the Error ui component in Error Fetch Data 1`] = `
+<div
+  class="container-error"
+>
+  <p>
+    "An error occurred"
+  </p>
+</div>
+`;

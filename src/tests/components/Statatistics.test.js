@@ -1,8 +1,7 @@
 import { render, cleanup, waitFor } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
-import { GETSTATISTICS } from '../Graphql/Queries';
-import { Statistics } from '../components/statistics/Statistics';
-import { Loading } from '../components/utils/Loading';
+import { GETSTATISTICS } from '../../Graphql/Queries';
+import { Statistics } from '../../components/statistics/Statistics';
 
 afterEach(cleanup);
 const mocks = [
@@ -60,16 +59,16 @@ describe('Testing <Statistics component />', () => {
         //select loading component root class.
         const loading = container.querySelector('.MuiCircularProgress-root');
         expect(loading).toBeInTheDocument();
-    }),
-        it('should match <Statistic/> component with Snaphshot', async () => {
-            const { container } = render(
-                <MockedProvider mocks={mocks} addTypename={false}>
-                    <Statistics />
-                </MockedProvider>
-            );
-            await waitFor(() => new Promise((res) => setTimeout(res, 0)));
-            expect(container).toMatchSnapshot();
-        });
+    });
+    it('should match <Statistic/> component with Snaphshot', async () => {
+        const { container } = render(
+            <MockedProvider mocks={mocks} addTypename={false}>
+                <Statistics />
+            </MockedProvider>
+        );
+        await waitFor(() => new Promise((res) => setTimeout(res, 0)));
+        expect(container).toMatchSnapshot();
+    });
 
     it('should render the Error ui component in Error Fetch Data', async () => {
         const { container } = render(
