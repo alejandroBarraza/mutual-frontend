@@ -30,8 +30,9 @@ img {
 }
 
 .navbar-mobile-menu {
+    background: none;
     z-index: 1;
-    height: 92vh;
+    height: 100vh;
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -51,6 +52,7 @@ img {
 .navbar-mobile-menu.active {
     left: 0;
     transition: all 0.5s ease;
+    position: fixed;
 }
 .navbar-mobile-menu li {
     padding: 2rem;
