@@ -14,6 +14,7 @@ export const StatisticCard = () => {
     return (
         <Query query={GETSTATISTICS} id={null}>
             {({ data: { statistics } }) => {
+                if (!statistics.length) return null;
                 return (
                     <>
                         <div className='card'>
