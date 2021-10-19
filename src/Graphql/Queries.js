@@ -22,3 +22,18 @@ export const GETSTATISTICS = gql`
         }
     }
 `;
+
+// get download content given limit and start =="offset" as arguments
+export const GETDOWNLOADS_LIMIT_START = gql`
+    query GetDownloads($limit: Int!, $start: Int!) {
+        downloads(limit: $limit, start: $start) {
+            id
+            published_at
+            titulo
+            imagenes {
+                name
+                url
+            }
+        }
+    }
+`;
