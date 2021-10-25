@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
-import MenuOpenRoundedIcon from '@material-ui/icons/MenuOpenRounded';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import MenuOpenRoundedIcon from '@mui/icons-material/MenuOpenRounded';
+
 import '../../../container.css';
 import './NavbarMobile.css';
 import { NavbarItem } from './NavbarItem';

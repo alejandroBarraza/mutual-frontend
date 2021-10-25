@@ -1,88 +1,88 @@
 import React from 'react';
-// import { Button } from '../utils/Button';
-import styled from 'styled-components';
-import { Button } from '../utils/Button';
+import { styled } from '@mui/material/styles';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import Collapse from '@mui/material/Collapse';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const CardContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 1rem 0rem;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin-top: 1rem;
-    background-color: red;
-    width: 100%;
+const ExpandMore = styled((props) => {
+    const { expand, ...other } = props;
+    return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+    transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+        duration: theme.transitions.duration.shortest,
+    }),
+}));
 
-    transition: box-shadow 0.2s ease;
-    &:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    }
-`;
-const ImageContainer = styled.div`
-    flex: 1 0 50%;
-    img {
-        overflow: hidden;
-        min-height: 100%;
-        min-width: 100%;
-        border-radius: 20px 0 0 20px;
-        object-fit: cover;
-        object-position: 50% 50%;
-        filter: brightness(70%);
-        transition: filter 0.5s ease-in-out;
-
-        &:hover {
-            filter: none;
-        }
-    }
-`;
-const TextContainer = styled.div`
-    flex: 1 0 50%;
-    background-color: #ffffff;
-    border-radius: 0 20px 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    text-align: center;
-    font-size: calc(8px + (12 - 8) * ((100vw - 300px) / (1600 - 300)));
-`;
+const CustomCss = {
+    card: { maxWidth: 345, margin: 'auto' },
+    imagenCustom: {
+        filter: 'brightness(70%)',
+        transition: 'filter 0.5s ease-in-out',
+        '&:hover': {
+            filter: 'none',
+        },
+    },
+};
 
 export const Downloads = () => {
+    const [expanded, setExpanded] = React.useState(false);
+
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
+
     return (
         <div className='container'>
-            <CardContainer>
-                <ImageContainer>
-                    <img
-                        src='https://image.freepik.com/vector-gratis/fondo-ilustracion-criaturas-coloridas-espeluznantes_516247-10.jpg'
-                        alt='foto-random'
-                    />
-                </ImageContainer>
-                <TextContainer>
-                    <h2>holac como estas</h2>
-                    <p>lorem5</p>
-                    <Button mutual>Descargar</Button>
-                </TextContainer>
-            </CardContainer>
-            <CardContainer>
-                <ImageContainer>
-                    <img
-                        src='https://cdn.pixabay.com/photo/2021/10/02/18/49/square-6676128_960_720.jpg'
-                        alt='foto-random2'
-                    />
-                </ImageContainer>
-                <TextContainer>
-                    <h2>holac como estas</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-                        voluptates dicta porro nobis repudiandae odio illum nam amet fuga, deleniti
-                        voluptate asperiores. Perferendis, sit consectetur.
-                    </p>
-                    <Button mutual>Descargar</Button>
-                </TextContainer>
-            </CardContainer>
+            <Card sx={CustomCss.card}>
+                <CardMedia
+                    component='img'
+                    height='194'
+                    image='https://image.freepik.com/vector-gratis/fondo-halloween-plano-dibujado-mano_23-2149109803.jpg'
+                    alt='random imagen'
+                    sx={CustomCss.imagenCustom}
+                />
+                <CardContent>
+                    <Typography variant='body2' color='text.secondary'>
+                        This impressive paella is a perfect party dish and a fun meal to cook
+                        together with your guests. Add 1 cup of frozen peas along with the mussels,
+                        if you like.
+                    </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                    <ExpandMore
+                        expand={expanded}
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                        aria-label='show more'>
+                        <ExpandMoreIcon />
+                    </ExpandMore>
+                </CardActions>
+                <Collapse in={expanded} timeout='auto' unmountOnExit>
+                    <CardContent>
+                        <Typography paragraph>Method:</Typography>
+                        <Typography paragraph>
+                            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
+                            aside for 10 minutes.
+                        </Typography>
+                        <Typography paragraph>
+                            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over
+                        </Typography>
+                        <Typography paragraph>
+                            Add rice and stir very gently to distribute. Top with artichokes and p
+                        </Typography>
+                        <Typography>
+                            Set aside off of the heat to let rest for 10 minutes, and then serve.
+                        </Typography>
+                    </CardContent>
+                </Collapse>
+            </Card>
         </div>
     );
 };
