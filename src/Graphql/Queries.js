@@ -25,13 +25,27 @@ export const GETSTATISTICS = gql`
 
 // get download content given limit and start =="offset" as arguments
 export const GETDOWNLOADS_LIMIT_START = gql`
-    query GetDownloads($limit: Int!, $start: Int!) {
-        downloads(limit: $limit, start: $start) {
+    query GetDownloads($start: Int!, $limit: Int!) {
+        downloads(start: $start, limit: $limit) {
             id
             published_at
             titulo
             imagenes {
                 name
+                url
+            }
+        }
+    }
+`;
+
+export const GETNEWS_START_LIMIT = gql`
+    query getNews($limit: Int!, $start: Int!) {
+        news(limit: $limit, start: $start) {
+            id
+            titulo
+            descripcion
+            tiempoLectura
+            imagen {
                 url
             }
         }
