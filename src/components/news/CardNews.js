@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
+
 import Card from '@mui/material/Card';
+import Divider from '@mui/material/Divider';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import { Box } from '@mui/system';
+
+import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
+import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
 
 const styles = {
     card: {
@@ -15,11 +20,7 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
     },
-    gridFour: {
-        align: 'center',
-    },
     media: {
-        // ⚠️ object-fit is not supported by IE11.
         objectFit: 'cover',
         postion: 'relative',
         filter: 'brightness(70%)',
@@ -31,138 +32,41 @@ const styles = {
     readInfo: {
         padding: '16px',
         display: 'flex',
-        marginTop: 'auto',
         '& h6': {
-            marginRight: '1rem',
+            marginRight: '0.3rem',
         },
     },
 };
 // The issue is with the grid. The Card has max size, but the grid is larger. This leave some extra space. If you look in the debugger, there is no margin to change.
 
-export const CardNews = ({ maxWidth, columnNumber }) => {
+export const CardNews = ({ data, maxWidth }) => {
+    const { id, descripcion, imagen, titulo, tiempoLectura } = data;
     return (
-        <Grid container spacing={6} alignItems='stretch'>
-            <Grid
-                item
-                xs={columnNumber.xs}
-                sm={columnNumber.sm}
-                md={columnNumber.md}
-                sx={styles.gridFour}>
-                <Card sx={{ ...styles.card, maxWidth }}>
-                    <CardMedia
-                        component='img'
-                        height='140'
-                        image='https://cdn.pixabay.com/photo/2021/09/28/14/21/clocks-6664622_960_720.jpg'
-                        alt='testing pic'
-                        sx={styles.media}
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant='h5' component='div'>
-                            Lizard
-                        </Typography>
-                        <Typography variant='body2' color='text.secondary'>
-                            Lizards are a widespread group of squamate reptiles, with over 6,000
-                            species, ranging across all continents except Antarctica Lizards are a
-                            widespread group of squamate reptiles, with over 6,000 species, ranging
-                            across all continents except Antarctica
-                        </Typography>
-                    </CardContent>
-                    <Box sx={styles.readInfo}>
-                        <Typography variant='subtitle2'>2 hours ago</Typography>
-                        <Typography variant='subtitle2'>2 min read</Typography>
-                    </Box>
-                </Card>
-            </Grid>
-            <Grid
-                item
-                xs={columnNumber.xs}
-                sm={columnNumber.sm}
-                md={columnNumber.md}
-                sx={styles.gridFour}>
-                <Card sx={{ ...styles.card, maxWidth }}>
-                    <CardMedia
-                        component='img'
-                        height='140'
-                        image='https://cdn.pixabay.com/photo/2021/09/28/14/21/clocks-6664622_960_720.jpg'
-                        alt='testing pic'
-                        sx={styles.media}
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant='h5' component='div'>
-                            Lizard
-                        </Typography>
-                        <Typography variant='body2' color='text.secondary'>
-                            Lizards are a widespread group of squamate reptiles, with over 6,000
-                            species, ranging across all continents except Antarctica Lizards are a
-                            widespread group of squamate reptiles, with over 6,000 species, ranging
-                            across all continents except Antarctica
-                        </Typography>
-                    </CardContent>
-                    <Box sx={styles.readInfo}>
-                        <Typography variant='subtitle2'>2 hours ago</Typography>
-                        <Typography variant='subtitle2'>2 min read</Typography>
-                    </Box>
-                </Card>
-            </Grid>
-            <Grid
-                item
-                xs={columnNumber.xs}
-                sm={columnNumber.sm}
-                md={columnNumber.md}
-                sx={styles.gridFour}>
-                <Card sx={{ ...styles.card, maxWidth }}>
-                    <CardMedia
-                        component='img'
-                        height='140'
-                        image='https://cdn.pixabay.com/photo/2021/09/28/14/21/clocks-6664622_960_720.jpg'
-                        alt='testing pic'
-                        sx={styles.media}
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant='h5' component='div'>
-                            Lizard
-                        </Typography>
-                        <Typography variant='body2' color='text.secondary'>
-                            Lizards are a widespread group of squamate reptiles, with over 6,000
-                            species, ranging across all continents except Antarctica
-                        </Typography>
-                    </CardContent>
-                    <Box sx={styles.readInfo}>
-                        <Typography variant='subtitle2'>2 hours ago</Typography>
-                        <Typography variant='subtitle2'>2 min read</Typography>
-                    </Box>
-                </Card>
-            </Grid>
-            <Grid
-                item
-                xs={columnNumber.xs}
-                sm={columnNumber.sm}
-                md={columnNumber.md}
-                sx={styles.gridFour}>
-                <Card sx={{ ...styles.card, maxWidth }}>
-                    <CardMedia
-                        component='img'
-                        height='140'
-                        image='https://cdn.pixabay.com/photo/2021/09/28/14/21/clocks-6664622_960_720.jpg'
-                        alt='testing pic'
-                        sx={styles.media}
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant='h5' component='div'>
-                            Lizard
-                        </Typography>
-                        <Typography variant='body2' color='text.secondary'>
-                            Lizards are a widespread group of squamate reptiles, with over 6,000
-                            species, ranging across all continents except Antarctica
-                        </Typography>
-                    </CardContent>
-                    <Box sx={styles.readInfo}>
-                        <Typography variant='subtitle2'>2 hours ago</Typography>
-                        <Typography variant='subtitle2'>2 min read</Typography>
-                    </Box>
-                </Card>
-            </Grid>
-        </Grid>
+        <Link style={{ textDecoration: 'none' }} to={`./noticias/${id}`}>
+            <Card sx={{ ...styles.card, maxWidth }}>
+                <CardMedia
+                    component='img'
+                    height='140'
+                    image={imagen.url}
+                    alt='testing pic'
+                    sx={styles.media}
+                />
+                <CardContent>
+                    <Typography gutterBottom variant='h5' component='div'>
+                        {titulo}
+                    </Typography>
+                    <Typography variant='body2' color='text.secondary'>
+                        {descripcion}
+                    </Typography>
+                </CardContent>
+                <Divider sx={{ marginTop: 'auto' }} />
+                <Box sx={styles.readInfo}>
+                    <Typography variant='subtitle2'>{`${tiempoLectura}`} </Typography>
+                    <MenuBookRoundedIcon fontSize='small' color='action' />
+                    <IosShareRoundedIcon fontSize='small' sx={{ marginLeft: ' auto' }} />
+                </Box>
+            </Card>
+        </Link>
     );
 };
 
