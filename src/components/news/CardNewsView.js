@@ -9,21 +9,23 @@ import { ErrorUI } from '../utils/ErrorUI';
 import { GETNEWS_START_LIMIT } from '../../Graphql/Queries';
 
 export const CardNewsView = () => {
-    // const handleFetchMore = () => {
-    //     fetchMore({
-    //         variables: {
-    //             start: data.news[data.news.length - 1].id,
-    //             limit: 3,
-    //         },
-    //         updateQuery: (pv, { fetchMoreResult }) => {
-    //             console.log('pase');
-    //             if (!fetchMoreResult) return pv;
-    //             return {
-    //                 news: [...pv, ...fetchMoreResult.news],
-    //             };
-    //         },
-    //     });
-    // };
+    const handleFetchMore = () => {
+        fetchMore({
+            variables: {
+                start: data.news.length,
+                limit: 3,
+            },
+            updateQuery: (pv, { fetchMoreResult }) => {
+                if (!fetchMoreResult) {
+                    return pv;
+                }
+
+                return {
+                    news: [...pv.news, ...fetchMoreResult.news],
+                };
+            },
+        });
+    };
 
     const { data, loading, error, fetchMore } = useQuery(GETNEWS_START_LIMIT, {
         variables: { start: 0, limit: 3 },
@@ -44,26 +46,7 @@ export const CardNewsView = () => {
             </Grid>
 
             <Box textAlign='center' m={8}>
-                <Button
-                    variant='outlined'
-                    color='success'
-                    onClick={() => {
-                        fetchMore({
-                            variables: {
-                                start: data.news.length,
-                                limit: 3,
-                            },
-                            updateQuery: (pv, { fetchMoreResult }) => {
-                                if (!fetchMoreResult) {
-                                    return pv;
-                                }
-
-                                return {
-                                    news: [...pv.news, ...fetchMoreResult.news],
-                                };
-                            },
-                        });
-                    }}>
+                <Button variant='outlined' color='success' onClick={handleFetchMore}>
                     Ver mas
                 </Button>
             </Box>
