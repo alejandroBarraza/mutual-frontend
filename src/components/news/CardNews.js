@@ -12,31 +12,8 @@ import { Box } from '@mui/system';
 
 import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
 import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
+import { styles } from './StyleCardNews';
 
-const styles = {
-    card: {
-        margin: 'auto',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-    },
-    media: {
-        objectFit: 'cover',
-        postion: 'relative',
-        filter: 'brightness(70%)',
-        transition: 'filter 0.5s ease-in-out',
-        '&:hover': {
-            filter: 'none',
-        },
-    },
-    readInfo: {
-        padding: '16px',
-        display: 'flex',
-        '& h6': {
-            marginRight: '0.3rem',
-        },
-    },
-};
 // The issue is with the grid. The Card has max size, but the grid is larger. This leave some extra space. If you look in the debugger, there is no margin to change.
 
 export const CardNews = ({ data, maxWidth }) => {
@@ -61,9 +38,13 @@ export const CardNews = ({ data, maxWidth }) => {
                 </CardContent>
                 <Divider sx={{ marginTop: 'auto' }} />
                 <Box sx={styles.readInfo}>
-                    <Typography variant='subtitle2'>{`${tiempoLectura}`} </Typography>
+                    <Typography variant='subtitle2'>{`${tiempoLectura}min`} </Typography>
                     <MenuBookRoundedIcon fontSize='small' color='action' />
-                    <IosShareRoundedIcon fontSize='small' sx={{ marginLeft: ' auto' }} />
+                    <IosShareRoundedIcon
+                        fontSize='small'
+                        color='action'
+                        sx={{ marginLeft: ' auto' }}
+                    />
                 </Box>
             </Card>
         </Link>

@@ -7,6 +7,8 @@ import { useQuery } from '@apollo/client';
 import { Loading } from '../utils/Loading';
 import { ErrorUI } from '../utils/ErrorUI';
 import { GETNEWS_START_LIMIT } from '../../Graphql/Queries';
+import { Typography } from '@mui/material';
+import { styles } from './StyleCardNewsView';
 
 export const CardNewsView = () => {
     const handleFetchMore = () => {
@@ -15,13 +17,13 @@ export const CardNewsView = () => {
                 start: data.news.length,
                 limit: 3,
             },
-            updateQuery: (pv, { fetchMoreResult }) => {
+            updateQuery: (prevValue, { fetchMoreResult }) => {
                 if (!fetchMoreResult) {
-                    return pv;
+                    return prevValue;
                 }
 
                 return {
-                    news: [...pv.news, ...fetchMoreResult.news],
+                    news: [...prevValue.news, ...fetchMoreResult.news],
                 };
             },
         });
@@ -33,10 +35,16 @@ export const CardNewsView = () => {
 
     if (loading) return <Loading />;
     if (error) return <ErrorUI error={error.message} />;
-    console.log(data.news.length);
 
     return (
         <div className='container'>
+            <Box textAling='center' sx={styles.titleContainer}>
+                <Typography variant='h3'>Ultimas Noticias</Typography>
+                <Typography variant='h5' align='center'>
+                    todo acerca de las ultimas noticas y eventos Aun te espero
+                </Typography>
+            </Box>
+
             <Grid container spacing={6} alignItems='stretch'>
                 {data.news.map((newData) => (
                     <Grid key={newData.id} item xs={12} sm={6} md={4} sx={{ align: 'center' }}>
@@ -53,3 +61,7 @@ export const CardNewsView = () => {
         </div>
     );
 };
+
+// add after
+// import debounce from 'lodash.debounce';
+// const debouncedChangeHandler = useCallback(debounce(handleFetchMore, 1000), []);
