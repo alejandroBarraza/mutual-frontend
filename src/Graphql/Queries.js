@@ -40,7 +40,7 @@ export const GETDOWNLOADS_LIMIT_START = gql`
 
 export const GETNEWS_START_LIMIT = gql`
     query getNews($limit: Int!, $start: Int!) {
-        news(limit: $limit, start: $start) {
+        news(limit: $limit, start: $start, sort: "created_at:desc") {
             id
             titulo
             descripcion
