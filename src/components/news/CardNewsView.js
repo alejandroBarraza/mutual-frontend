@@ -1,14 +1,15 @@
 import React from 'react';
-import { Box } from '@mui/system';
-import Button from '@mui/material/Button';
-import { CardNews } from './CardNews';
-import Grid from '@mui/material/Grid';
 import { useQuery } from '@apollo/client';
-import { Loading } from '../utils/Loading';
-import { ErrorUI } from '../utils/ErrorUI';
+
+import { Grid, Button, Typography } from '@mui/material';
+
+import { Box } from '@mui/system';
+
 import { GETNEWS_START_LIMIT } from '../../Graphql/Queries';
-import { Typography } from '@mui/material';
+import { ErrorUI } from '../utils/ErrorUI';
+import { Loading } from '../utils/Loading';
 import { styles } from './StyleCardNewsView';
+import { CardNews } from './CardNews';
 
 export const CardNewsView = () => {
     const handleFetchMore = () => {
@@ -48,13 +49,18 @@ export const CardNewsView = () => {
             <Grid container spacing={6} alignItems='stretch'>
                 {data.news.map((newData) => (
                     <Grid key={newData.id} item xs={12} sm={6} md={4} sx={{ align: 'center' }}>
-                        <CardNews key={newData.id} data={newData} maxWidth={'345'} />
+                        <CardNews
+                            descriptionInfo
+                            key={newData.id}
+                            data={newData}
+                            maxWidth={'345'}
+                        />
                     </Grid>
                 ))}
             </Grid>
 
             <Box textAlign='center' m={8}>
-                <Button variant='outlined' color='success' onClick={handleFetchMore}>
+                <Button variant='contained' color='success' onClick={handleFetchMore}>
                     Ver mas
                 </Button>
             </Box>
