@@ -1,22 +1,9 @@
 import React from 'react';
 import "./imagesCarousel.css";
 import { Carousel } from 'react-carousel-minimal';
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { CircularProgress } from '@material-ui/core';
-
-/**
- * Graphql query to the database.
- */
-export const IMAGES = gql`
-   query GetCarrusel {
-      carrusel {
-         titulo
-         descripcion
-         imagenes{
-            url
-         }
-      }
-   }`;
+import { IMAGES } from '../../../Graphql/Queries';
 
 /**
  * This component returns a carousel of images from the main page.

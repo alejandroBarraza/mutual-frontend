@@ -2,6 +2,7 @@ import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import './App.css';
 import { AppRouter } from './routers/AppRouter';
+import ScopedCssBaseline from '@material-ui/core/ScopedCssBaseline';
 
 export const client = new ApolloClient({
     uri: 'http://localhost:1337/graphql',
@@ -10,11 +11,11 @@ export const client = new ApolloClient({
 
 function App() {
     return (
-        <div>
+        <ScopedCssBaseline>
             <ApolloProvider client={client}>
                 <AppRouter />
             </ApolloProvider>
-        </div>
+        </ScopedCssBaseline>
     );
 }
 

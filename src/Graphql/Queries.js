@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-//videos queries(always get last created)
+// Videos queries(always get last created)
 export const GETVIDEOS = gql`
     query Getvideo {
         videos(limit: 1, sort: "created_at:desc") {
@@ -12,7 +12,7 @@ export const GETVIDEOS = gql`
     }
 `;
 
-//statistic query(always get last 4 created)
+// Statistic query(always get last 4 created)
 export const GETSTATISTICS = gql`
     query GetStatistic {
         statistics(limit: 4, sort: "created_at:asc") {
@@ -22,3 +22,30 @@ export const GETSTATISTICS = gql`
         }
     }
 `;
+
+// Images of the Carousel.
+export const IMAGES = gql`
+   query GetCarrusel {
+      carrusel {
+         titulo
+         descripcion
+         imagenes{
+            url
+         }
+      }
+   }`;
+
+
+// News by ID query
+export const GETNEWSBYID = (id = 0) => {
+    return (
+        gql`
+        query GetNewsById ($newID: ID = ${id}){
+        new ( id:$newID ){
+                descripcion
+                cuerpo
+            }
+        }
+        `
+    )
+}
