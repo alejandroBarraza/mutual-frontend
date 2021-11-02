@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Home } from '../components/home/Home';
 import { Navbar } from '../components/home/navbar/Navbar';
-import { NewsById } from '../components/new/NewsById';
-import { News } from '../components/news/News';
+import { News } from '../components/news/New';
+import { NewsById } from '../components/news/NewsById';
 
 export const AppRouter = () => {
     return (

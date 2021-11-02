@@ -16,7 +16,7 @@ export const NavbarItem = [
     },
     {
         title: 'Descargables',
-        url: '#',
+        url: '/descargables',
         cName: 'navbar-items',
     },
     {
