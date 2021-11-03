@@ -1,69 +1,50 @@
 import React from 'react';
-import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
-import { Box } from '@mui/material';
+import { Box, Paper, Typography } from '@mui/material';
 import MaterialTable from '@material-table/core';
-
-// let theme = createTheme({
-//     typography: {
-//         fontFamily: 'Public Sans',
-//         allVariants: {
-//             color: '(var--paragraph-color)',
-//         },
-//     },
-// });
-
+import { GETDOWNLOADS_SORTED_DESC } from '../../Graphql/Queries';
+import { useQuery } from '@apollo/client';
+import { Loading } from '../utils/Loading';
+import { ErrorUI } from '../utils/ErrorUI';
+import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
 export const Downloads = () => {
-    // const { data, loading, error } = useQuery();
+    const { data, loading, error } = useQuery(GETDOWNLOADS_SORTED_DESC);
+    if (loading) return <Loading />;
+    if (error) return <ErrorUI error={error.message} />;
+    if (!data.downloads.length) return null;
 
-    // if (loading) return <Loading />;
-    // if (error) return <ErrorUI error={error.message} />;
     const columns = [
-        { title: 'Titulo', field: 'title' },
-        { title: 'Descripcion', field: 'description' },
-    ];
-    const data = [
-        {
-            title: 'prevencion accidentes',
-            description: 'Lorem, ipsum dolor sit amet ',
-        },
-        {
-            title: 'prevencion accidentes',
-            description: 'Lorem, ipsum dolor sit amet .',
-        },
-        {
-            title: 'a',
-            description: 'Lorem, ipsum dolor sit amet .',
-        },
-        {
-            title: 'prevencion accidentes',
-            description: 'Lorem, ipsum dolor sit amet .',
-        },
-        {
-            title: 'prevencion accidentes',
-            description: 'Lorem, ipsum dolor sit amet .',
-        },
-        {
-            title: 'prevencion accidentes',
-            description: 'Lorem, ipsum dolor sit amet .',
-        },
-        {
-            title: 'prevencion accidentes',
-            description: 'Lorem, ipsum dolor sit amet .',
-        },
+        { title: 'Titulo', field: 'titulo' },
+        { title: 'Descripcion', field: 'descripcion' },
     ];
 
     return (
-        // <ThemeProvider theme={theme}>
         <div className='container'>
-            <Box sx={{ mt: 6, borderRadius: '2rem' }}>
+            <Typography sx={{ color: '#212B36', fontWeight: 700, mt: 6 }} variant='h5'>
+                Contenido Descargable
+            </Typography>
+            <Box
+                sx={{
+                    minWidth: '100%',
+                    mt: 6,
+                    borderRadius: '20rem',
+                }}>
                 <MaterialTable
                     columns={columns}
-                    data={data}
+                    data={data.downloads}
                     actions={[
                         {
-                            icon: 'download',
+                            icon: () => (
+                                <DownloadRoundedIcon sx={{ color: 'var(--mutual-color)' }} />
+                            ),
                             tooltip: 'descargar',
-                            onClick: (event, rowData) => alert('You saved ' + rowData.name),
+                            onClick: (event, rowData) =>
+                                rowData.archivo
+                                    ? window.open(
+                                          rowData.archivo.url,
+                                          '_blank',
+                                          'noopener,resizable,scrollbars'
+                                      )
+                                    : null,
                         },
                     ]}
                     options={{
@@ -71,13 +52,19 @@ export const Downloads = () => {
                         showTitle: false,
                         search: true,
                         searchFieldAlignment: 'left',
+
                         headerStyle: {
                             backgroundColor: ' #F4F6F8',
                             paddingTop: '1rem',
                             paddingBottom: '1rem',
                             color: '#637381',
+                            fontWeight: 'bold',
                         },
-                        editCellStyle: { borderRadius: '2rem' },
+                    }}
+                    components={{
+                        Container: (props) => (
+                            <Paper {...props} elevation={12} sx={{ borderRadius: '16px' }} />
+                        ),
                     }}
                     localization={{
                         header: {
@@ -104,6 +91,5 @@ export const Downloads = () => {
                 />
             </Box>
         </div>
-        // </ThemeProvider>
     );
 };
