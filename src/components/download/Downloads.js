@@ -19,7 +19,9 @@ export const Downloads = () => {
 
     return (
         <div className='container'>
-            <Typography sx={{ color: '#212B36', fontWeight: 700, mt: 6 }} variant='h5'>
+            <Typography
+                sx={{ color: 'var(--paragraph-color)', fontWeight: 700, mt: 6 }}
+                variant='h5'>
                 Contenido Descargable
             </Typography>
             <Box
