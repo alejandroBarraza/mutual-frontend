@@ -42,13 +42,13 @@ export const Footer = () => {
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Box style={styles.socialContainer}>
-                            <Link href='http://www.instagram.com' target='_blank'>
+                            <Link href='http://www.instagram.com' target='_blank' rel='noopener'>
                                 <InstagramIcon fontSize='medium' sx={{ color: 'white', mr: 3 }} />
                             </Link>
-                            <Link href='http://www.facebook.com' target='_blank'>
+                            <Link href='http://www.facebook.com' target='_blank' rel='noopener'>
                                 <FacebookIcon fontSize='medium' sx={{ color: 'white', mr: 3 }} />
                             </Link>
-                            <Link href='http://www.twitter.com' target='_blank'>
+                            <Link href='http://www.twitter.com' target='_blank' rel='noopener'>
                                 <TwitterIcon fontSize='medium' sx={{ color: 'white' }} />
                             </Link>
                         </Box>
