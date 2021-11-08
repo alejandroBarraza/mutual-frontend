@@ -64,3 +64,14 @@ export const GETNEWS_START_LIMIT = gql`
         }
     }
 `;
+
+// get the footer elements
+export const GET_ALL_FOOTER = gql`
+    query getFooter {
+        footer {
+            selloSeguridad
+            descripcion
+            links
+        }
+    }
+`;
