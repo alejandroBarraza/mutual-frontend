@@ -41,9 +41,13 @@ export const GETNEWSBYID = (id = 0) => {
     return (
         gql`
         query GetNewsById ($newID: ID = ${id}){
-        new ( id:$newID ){
+            new ( id:$newID ){
+                titulo
                 descripcion
                 cuerpo
+                imagenPresentacion {
+                    url
+                }
             }
         }
         `

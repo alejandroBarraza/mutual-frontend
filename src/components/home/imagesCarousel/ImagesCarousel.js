@@ -2,7 +2,7 @@ import React from 'react';
 import './imagesCarousel.css';
 import { Carousel } from 'react-carousel-minimal';
 import { useQuery } from '@apollo/client';
-import { CircularProgress } from '@material-ui/core';
+import { CircularProgress } from '@mui/material';
 import { IMAGES } from '../../../Graphql/Queries';
 
 /**
@@ -22,13 +22,13 @@ export const ImagesCarousel = () => {
     const images = data
         ? data.carrusel === null
             ? [
-                  {
-                      image: 'https://kinsta.com/es/wp-content/uploads/sites/8/2017/08/error-de-conexi%C3%B3n-base-de-datos.png',
-                  },
-              ]
+                {
+                    image: 'https://kinsta.com/es/wp-content/uploads/sites/8/2017/08/error-de-conexi%C3%B3n-base-de-datos.png',
+                },
+            ]
             : data.carrusel.imagenes.map((img) => {
-                  return { image: `${img.url}` };
-              })
+                return { image: `${img.url}` };
+            })
         : [];
 
     // Carousel Title
