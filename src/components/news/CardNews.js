@@ -20,7 +20,7 @@ export const CardNews = ({ descriptionInfo, data, maxWidth }) => {
                     <CardMedia
                         component='img'
                         height='140'
-                        image={imagen.url}
+                        image={imagen?.url}
                         alt='testing pic'
                         sx={styles.media}
                     />

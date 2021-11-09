@@ -1,28 +1,27 @@
 import { render, cleanup, waitFor } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
-import { GETVIDEOS } from '../../Graphql/Queries';
-import { Video } from '../../components/videos/Video';
-import { youtube_parser } from '../../helpers/youtubeParser';
 import '@wojtekmaj/enzyme-adapter-react-17';
+import { GET_ALL_FOOTER } from '../../Graphql/Queries';
+import { Footer } from '../../components/home/footer/Footer';
 
 afterEach(cleanup);
 
 const mocks = [
     {
         request: {
-            query: GETVIDEOS,
-            variables: { id: null },
+            query: GET_ALL_FOOTER,
         },
         result: {
             data: {
-                videos: [
-                    {
-                        created_at: '2021-10-13T17:36:55.714Z',
-                        descripcion: 'mutual',
-                        links: 'https://www.youtube.com/watch?v=NrO0CJCbYLA',
-                        titulo: 'mutual lo mejor de chile',
-                    },
-                ],
+                footer: {
+                    selloSeguridad: '© copyright 2021 | Mutual-UCN',
+                    descripcion:
+                        'Nacimos para dar seguridad, salud y protección a los trabajadores, trascendemos aportando al progreso de Chile',
+                    instagram: 'https://www.instagram.com',
+                    facebook: 'https://www.facebook.com',
+                    youtube: 'https://www.youtube.com',
+                    twitter: 'https://www.twitter.com',
+                },
             },
         },
     },
@@ -31,18 +30,18 @@ const mocks = [
 const mocksError = [
     {
         request: {
-            query: GETVIDEOS,
+            query: GET_ALL_FOOTER,
             variables: { id: null },
         },
         error: new Error('An error occurred'),
     },
 ];
 
-describe('Testing <Videos/> component at error,loading and data fetched states.', () => {
+describe('Testing <Footer/> component at error,loading and data fetched states.', () => {
     it('should render <Loading/> before graphql promise get resolved.', () => {
         const { container } = render(
             <MockedProvider mocks={mocks} addTypename={false}>
-                <Video />
+                <Footer />
             </MockedProvider>
         );
 
@@ -54,28 +53,21 @@ describe('Testing <Videos/> component at error,loading and data fetched states.'
     it('should render the Error ui component in Error Fetch Data', async () => {
         const { container } = render(
             <MockedProvider mocks={mocksError} addTypename={false}>
-                <Video />
+                <Footer />
             </MockedProvider>
         );
         await waitFor(() => new Promise((res) => setTimeout(res, 0)));
         const error = container.querySelector('.container-error');
-        console.log(error.innerHTML);
         expect(error).toMatchSnapshot();
     });
 
-    it('should match <Video/> component with Snaphshot', async () => {
+    it('should match <Footer/> component with Snaphshot', async () => {
         const { container } = render(
             <MockedProvider mocks={mocks} addTypename={false}>
-                <Video />
+                <Footer />
             </MockedProvider>
         );
         await waitFor(() => new Promise((res) => setTimeout(res, 0)));
         expect(container).toMatchSnapshot();
-    });
-
-    it('should check if function youtoube Parse work properly given a youtube url.', () => {
-        const url = youtube_parser('https://www.youtube.com/watch?v=aXzEmJs6_Qk');
-        console.log(url);
-        expect(url).toBe('aXzEmJs6_Qk');
     });
 });

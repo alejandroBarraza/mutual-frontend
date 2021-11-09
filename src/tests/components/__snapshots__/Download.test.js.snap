@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <Download/> component at error,loading,empty array and data fetched states. should render the Error ui component in Error Fetch Data 1`] = `
+<div
+  class="container-error"
+>
+  <p>
+    "An error occurred"
+  </p>
+</div>
+`;
