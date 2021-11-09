@@ -12,7 +12,15 @@ export const Downloads = () => {
     const { data, loading, error } = useQuery(GETDOWNLOADS_SORTED_DESC);
     if (loading) return <Loading />;
     if (error) return <ErrorUI error={error.message} />;
-    if (!data.downloads.length) return null;
+    if (!data.downloads.length)
+        return (
+            <Typography
+                data-testid='no-content'
+                sx={{ color: 'var(--paragraph-color)', fontWeight: 700, mt: 6 }}
+                variant='h5'>
+                No hay contenido para descargar disponible.
+            </Typography>
+        );
 
     const columns = [
         { title: 'Titulo', field: 'titulo' },
