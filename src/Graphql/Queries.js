@@ -68,6 +68,19 @@ export const GETDOWNLOADS_LIMIT_START = gql`
     }
 `;
 
+export const GETDOWNLOADS_SORTED_DESC = gql`
+    query GetDownloads {
+        downloads(sort: "created_at:desc") {
+            id
+            titulo
+            descripcion
+            archivo {
+                url
+            }
+        }
+    }
+`;
+
 export const GETNEWS_START_LIMIT = gql`
     query getNews($limit: Int!, $start: Int!) {
         news(limit: $limit, start: $start, sort: "created_at:desc") {
@@ -78,6 +91,17 @@ export const GETNEWS_START_LIMIT = gql`
             imagen {
                 url
             }
+        }
+    }
+`;
+
+// get the footer elements
+export const GET_ALL_FOOTER = gql`
+    query getFooter {
+        footer {
+            selloSeguridad
+            descripcion
+            links
         }
     }
 `;
