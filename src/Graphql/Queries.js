@@ -71,7 +71,10 @@ export const GET_ALL_FOOTER = gql`
         footer {
             selloSeguridad
             descripcion
-            links
+            instagram
+            facebook
+            twitter
+            youtube
         }
     }
 `;
