@@ -5,6 +5,7 @@ import { Box, Grid, Typography, Link } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 import { GET_ALL_FOOTER } from '../../../Graphql/Queries';
 import { ErrorUI } from '../../utils/ErrorUI';
@@ -53,15 +54,34 @@ export const Footer = () => {
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Box style={styles.socialContainer}>
-                            <Link href={data.footer.links.instagram} target='_blank' rel='noopener'>
-                                <InstagramIcon fontSize='medium' sx={{ color: 'white', mr: 3 }} />
-                            </Link>
-                            <Link href={data.footer.links.facebook} target='_blank' rel='noopener'>
-                                <FacebookIcon fontSize='medium' sx={{ color: 'white', mr: 3 }} />
-                            </Link>
-                            <Link href={data.footer.links.twitter} target='_blank' rel='noopener'>
-                                <TwitterIcon fontSize='medium' sx={{ color: 'white' }} />
-                            </Link>
+                            {data.footer.instagram ? (
+                                <Link href={data.footer.instagram} target='_blank' rel='noopener'>
+                                    <InstagramIcon
+                                        fontSize='medium'
+                                        sx={{ color: 'white', mr: 3 }}
+                                    />
+                                </Link>
+                            ) : null}
+
+                            {data.footer.facebook ? (
+                                <Link href={data.footer.facebook} target='_blank' rel='noopener'>
+                                    <FacebookIcon
+                                        fontSize='medium'
+                                        sx={{ color: 'white', mr: 3 }}
+                                    />
+                                </Link>
+                            ) : null}
+                            {data.footer.twitter ? (
+                                <Link href={data.footer.twitter} target='_blank' rel='noopener'>
+                                    <TwitterIcon fontSize='medium' sx={{ color: 'white', mr: 3 }} />
+                                </Link>
+                            ) : null}
+
+                            {data.footer.youtube ? (
+                                <Link href={data.footer.youtube} target='_blank' rel='noopener'>
+                                    <YouTubeIcon fontSize='medium' sx={{ color: 'white', mr: 3 }} />
+                                </Link>
+                            ) : null}
                         </Box>
                     </Grid>
                 </Grid>
