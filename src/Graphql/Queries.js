@@ -108,7 +108,7 @@ export const GET_ALL_FOOTER = gql`
 
 export const GET_PRIORITY_DOWNLOADS = gql`
     query getNews {
-      downloads {
+      downloads (where:{fijar:true}){
         id
         imagen{
           url
@@ -116,7 +116,7 @@ export const GET_PRIORITY_DOWNLOADS = gql`
         archivo{
           url
         }
-    		fijar
+    	fijar
       }
     }
 `;

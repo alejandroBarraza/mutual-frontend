@@ -12,7 +12,6 @@ export const ActionAreaCard = ({ download }) => {
          'noopener,resizable,scrollbars'
       )
    }
-   console.log(download.imagen.url);
    return (
       <Card sx={{ width: '100%' }} onClick={handleDownload}>
          <CardActionArea>

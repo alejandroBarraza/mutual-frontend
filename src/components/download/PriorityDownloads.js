@@ -13,13 +13,10 @@ export const PriorityDownloads = () => {
       <Box sx={{ width: '100%' }}>
          {
             (data && data.downloads.lengh !== 0) ? data.downloads.map((element) => {
-               if (element.fijar) {
-                  return (
+               return (
                      <Box sx={{ width: '100%', py: '.3rem' }} >
                         <ActionAreaCard download={element} />
                      </Box>)
-               }
-               return <Skeleton variant="rectangular" width={'100%'} height={'100%'} />
             }) : <Skeleton variant="rectangular" width={'100%'} height={'100%'} />
          }
       </Box>
