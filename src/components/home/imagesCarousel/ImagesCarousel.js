@@ -1,23 +1,9 @@
 import React from 'react';
 import './imagesCarousel.css';
 import { Carousel } from 'react-carousel-minimal';
-import { useQuery, gql } from '@apollo/client';
-import CircularProgress from '@mui/material/CircularProgress';
-
-/**
- * Graphql query to the database.
- */
-export const IMAGES = gql`
-    query GetCarrusel {
-        carrusel {
-            titulo
-            descripcion
-            imagenes {
-                url
-            }
-        }
-    }
-`;
+import { useQuery } from '@apollo/client';
+import { CircularProgress } from '@mui/material';
+import { IMAGES } from '../../../Graphql/Queries';
 
 /**
  * This component returns a carousel of images from the main page.
@@ -36,13 +22,13 @@ export const ImagesCarousel = () => {
     const images = data
         ? data.carrusel === null
             ? [
-                  {
-                      image: 'https://kinsta.com/es/wp-content/uploads/sites/8/2017/08/error-de-conexi%C3%B3n-base-de-datos.png',
-                  },
-              ]
+                {
+                    image: 'https://kinsta.com/es/wp-content/uploads/sites/8/2017/08/error-de-conexi%C3%B3n-base-de-datos.png',
+                },
+            ]
             : data.carrusel.imagenes.map((img) => {
-                  return { image: `${img.url}` };
-              })
+                return { image: `${img.url}` };
+            })
         : [];
 
     // Carousel Title

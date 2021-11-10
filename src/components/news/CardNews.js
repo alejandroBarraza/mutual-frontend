@@ -15,11 +15,11 @@ export const CardNews = ({ descriptionInfo, data, maxWidth }) => {
     const { id, descripcion, imagen, titulo, tiempoLectura } = data;
     return (
         data && (
-            <Link style={{ textDecoration: 'none' }} to={`./noticias/${id}`}>
+            <Link style={{ textDecoration: 'none' }} to={`../noticias/${id}`}>
                 <Card sx={{ ...styles.card, maxWidth }}>
                     <CardMedia
                         component='img'
-                        height='140'
+                        height='140rem'
                         image={imagen?.url}
                         alt='testing pic'
                         sx={styles.media}
@@ -29,7 +29,7 @@ export const CardNews = ({ descriptionInfo, data, maxWidth }) => {
                             {titulo}
                         </Typography>
                         {descriptionInfo && (
-                            <Typography variant='body2' color='text.secondary'>
+                            <Typography variant='body2' color='text.secondary' sx={{ height: '7rem', overflow: 'hidden' }}>
                                 {descripcion}
                             </Typography>
                         )}

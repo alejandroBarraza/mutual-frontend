@@ -7,7 +7,7 @@ import '../../../container.css';
 export const NavbarbarDesktop = () => {
     return (
         <div className='wrapper'>
-            <nav className='navbar container '>
+            <nav className='navbar container'>
                 <div className='logo'>
                     <img src='./mutual-svg.svg' alt='logo-mutual' />
                 </div>

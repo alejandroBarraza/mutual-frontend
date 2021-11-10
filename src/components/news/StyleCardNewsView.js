@@ -9,4 +9,14 @@ export const styles = {
             color: 'var(--paragraph-color)',
         },
     },
+    titleContainerNews: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'left',
+        margin: '2rem 0 ',
+        '& h5': {
+            margin: '1rem 0',
+            color: 'var(--paragraph-color)',
+        },
+    },
 };
