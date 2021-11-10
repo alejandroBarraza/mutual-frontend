@@ -11,15 +11,14 @@ export const AppRouter = () => {
     return (
         <Router>
             <Navbar />
-            <div style={{ position: 'relative', minHeight: '90vh' }}>
-                <Switch>
-                    <Route exact path='/noticias/:id' component={NewsById} />
-                    <Route exact path='/noticias' component={New} />
-                    <Route exact path='/descargables' component={Downloads} />
-                    <Route path='/' component={Home} />
-                </Switch>
-            </div>
+            <Switch>
+                <Route exact path='/noticias/:id' component={NewsById} />
+                <Route exact path='/noticias' component={New} />
+                <Route exact path='/descargables' component={Downloads} />
+                <Route path='/' component={Home} />
+            </Switch>
             <Footer />
         </Router>
     );
 };
+

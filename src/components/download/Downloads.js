@@ -16,7 +16,7 @@ export const Downloads = () => {
         return (
             <Typography
                 data-testid='no-content'
-                sx={{ color: 'var(--paragraph-color)', fontWeight: 700, mt: 6 }}
+                sx={{ color: 'var(--paragraph-color)', fontWeight: 700, pt: 2 }}
                 variant='h5'>
                 No hay contenido para descargar disponible.
             </Typography>
@@ -28,17 +28,19 @@ export const Downloads = () => {
     ];
 
     return (
-        <div className='container'>
+        <div className='container' style={{ minHeight: "72vh", position: 'relative' }}>
             <Typography
-                sx={{ color: 'var(--paragraph-color)', fontWeight: 700, mt: 6 }}
+                sx={{ color: 'var(--paragraph-color)', fontWeight: 700, pt: "1rem" }}
                 variant='h5'>
                 Contenido Descargable
             </Typography>
             <Box
                 sx={{
                     minWidth: '100%',
-                    mt: 6,
-                    borderRadius: '20rem',
+                    maxHeight: "100%",
+                    pt: "1rem",
+                    borderRadius: '2rem',
+                    pb: "1rem"
                 }}>
                 <MaterialTable
                     columns={columns}
@@ -52,10 +54,10 @@ export const Downloads = () => {
                             onClick: (event, rowData) =>
                                 rowData.archivo
                                     ? window.open(
-                                          rowData.archivo.url,
-                                          '_blank',
-                                          'noopener,resizable,scrollbars'
-                                      )
+                                        rowData.archivo.url,
+                                        '_blank',
+                                        'noopener,resizable,scrollbars'
+                                    )
                                     : null,
                         },
                     ]}
@@ -102,6 +104,6 @@ export const Downloads = () => {
                     }}
                 />
             </Box>
-        </div>
+        </div >
     );
 };

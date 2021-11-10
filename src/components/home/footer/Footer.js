@@ -15,6 +15,7 @@ const styles = {
     footerContainer: {
         backgroundColor: 'var(--mutual-color)',
         borderRadius: '4px 4px 0 0',
+        height: '14vh',
     },
 
     authorContainer: {
