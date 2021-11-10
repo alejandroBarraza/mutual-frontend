@@ -3,10 +3,13 @@
   font-family: "Public Sans", sans-serif;
   color: #71808c;
   border-radius: 0.5rem;
+  width: 100%;
+  height: 14vh;
+  padding: 0.5rem;
 }
 
 .navbar {
-  height: 5rem;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,16 +34,14 @@
   color: #bed700;
 }
 
-.logo {
-  height: 64px;
-  width: 64px;
+/* .logo {
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
+  height: 100%;
+} */
 
-img {
-  max-width: 100%;
-  max-height: 100%;
+image {
+  height: 100%;
 }

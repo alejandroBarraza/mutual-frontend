@@ -14,6 +14,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { styles } from './StyleCardNewsView';
 import { CardNews } from './CardNews';
 import { PriorityDownloads } from '../download/PriorityDownloads';
+import { height } from '@mui/system';
 
 const converter = new showdown.Converter();
 
@@ -68,7 +69,7 @@ export const NewsById = () => {
 
    return (
       <Box sx={{
-         height: '100%',
+         minHeight: '72vh',
          width: '100%',
          position: 'relative',
          pb: '2rem'
@@ -80,7 +81,7 @@ export const NewsById = () => {
             position: 'absolute'
          }}>
          </Box>
-         <Container fixed sx={{ position: 'relative' }}>
+         <Container sx={{ position: 'relative' }}>
             {
                title ? (
                   <Typography component="div">
@@ -107,17 +108,17 @@ export const NewsById = () => {
                   maxHeight: '20rem',
                   display: 'flex',
                   justifyContent: 'center',
-                  position: 'relative',
-                  pb: '2rem'
+                  pb: '2rem',
                }}><img src={presentationImage} alt='Imagen de Presentacion' /></Box> : null
             }
-            <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-               <Box sx={{ width: matches ? '80%' : '100%' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', }}>
+               <Box sx={{ width: matches ? '80%' : '100%', }}>
                   {
                      data_procesed ?
                         data_procesed.map((element) => {
                            return (<Box sx={{
-                              textAlign: element.includes('src') ? 'center' : 'left'
+                              textAlign: element.includes('src') ? 'center' : 'left',
+                              position: 'relative',
                            }}> <Markup content={element} /></Box>)
                         }) :
                         <Skeleton variant="rectangular" width={'100%'} height={'100%'} />
