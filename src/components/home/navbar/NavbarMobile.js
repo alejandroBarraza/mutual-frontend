@@ -13,7 +13,7 @@ export const NavbarMobile = () => {
         <div className='wrapper-mobile'>
             <nav className=' navbar-mobile container'>
                 <div className='logo-mobile'>
-                    <img src='./mutual-svg.svg' alt='logo-mutual' />
+                    <img src='/mutual-svg.svg' alt='logo-mutual' />
                 </div>
                 <div onClick={handleClick}>
                     {navClicked ? (

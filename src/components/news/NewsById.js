@@ -37,15 +37,16 @@ export const NewsById = () => {
    useEffect(() => {
       setPresentationImage('#');
       if (data) {
+         console.log(data);
          if (data.new != null) {
             let data_procesing = [];
             let html = converter.makeHtml(data.new.cuerpo);
-
             if (data.new.titulo != null) {
                setTitle(data.new.titulo);
             }
-            if (data.new.imagenPresentacion != null) {
-               setPresentationImage(data.new.imagenPresentacion.url);
+            if (data.new.imagenDePresentacion != null) {
+               setPresentationImage(data.new.imagenDePresentacion.url);
+               console.log(html);
             }
 
             html = html.split('<p>').filter((text) => { return text !== '' });
@@ -74,7 +75,7 @@ export const NewsById = () => {
       }} >
          <Box sx={{
             bgcolor: '#C3D600',
-            height: presentationImage !== '#' ? '25rem' : '15rem',
+            height: presentationImage !== '#' ? '18rem' : '15rem',
             width: '100%',
             position: 'absolute'
          }}>
@@ -99,10 +100,16 @@ export const NewsById = () => {
          </Container >
          <Container fixed sx={{
             position: 'relative',
-            py: presentationImage !== '#' ? '0rem' : '2rem'
+            py: presentationImage !== '#' ? '0rem' : '2rem',
          }}>
             {
-               presentationImage !== '#' ? <img src={presentationImage} alt='Imagen de Presentacion' /> : null
+               presentationImage !== '#' ? <Box sx={{
+                  maxHeight: '20rem',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  position: 'relative',
+                  pb: '2rem'
+               }}><img src={presentationImage} alt='Imagen de Presentacion' /></Box> : null
             }
             <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                <Box sx={{ width: matches ? '80%' : '100%' }}>

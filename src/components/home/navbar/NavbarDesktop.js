@@ -9,7 +9,7 @@ export const NavbarbarDesktop = () => {
         <div className='wrapper'>
             <nav className='navbar container'>
                 <div className='logo'>
-                    <img src='./mutual-svg.svg' alt='logo-mutual' />
+                    <img src='/mutual-svg.svg' alt='logo-mutual' />
                 </div>
                 <ul className='navbar-items'>
                     {NavbarItem.map((item, index) => (

@@ -43,9 +43,8 @@ export const GETNEWSBYID = (id = 0) => {
         query GetNewsById ($newID: ID = ${id}){
             new ( id:$newID ){
                 titulo
-                descripcion
                 cuerpo
-                imagenPresentacion {
+                imagenDePresentacion {
                     url
                 }
             }
