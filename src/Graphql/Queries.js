@@ -105,3 +105,18 @@ export const GET_ALL_FOOTER = gql`
         }
     }
 `;
+
+export const GET_PRIORITY_DOWNLOADS = gql`
+    query getNews {
+      downloads {
+        id
+        imagen{
+          url
+        }
+        archivo{
+          url
+        }
+    		fijar
+      }
+    }
+`;
