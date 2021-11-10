@@ -25,7 +25,7 @@ export const NewsById = () => {
     * @param error indicates if any error occurred.
     * @param data the data returned by the database.
     */
-   const { loadingData, errorData, data } = useQuery(GETNEWSBYID(id));
+   const { loading: loadingData, error: errorData, data } = useQuery(GETNEWSBYID(id));
    const { data: dataNews, loading, error } = useQuery(GETNEWS_START_LIMIT, {
       variables: { start: 0, limit: 6 }
    });
