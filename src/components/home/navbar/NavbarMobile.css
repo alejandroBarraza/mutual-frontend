@@ -1,71 +1,71 @@
 .wrapper-mobile {
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-    font-family: 'Public Sans', sans-serif;
-    color: #71808c;
-    border-radius: 0.5rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  font-family: "Public Sans", sans-serif;
+  color: #71808c;
+  height: 8vh;
 }
 .navbar-mobile {
-    height: 8vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 .logo-mobile {
-    height: 60px;
-    width: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 img {
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .navbar-items {
-    position: relative;
+  position: relative;
 }
 
 .navbar-mobile-menu {
-    background: none;
-    z-index: 1;
-    height: 100vh;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    width: 100%;
-    overflow: auto;
-    position: absolute;
-    top: 8vh;
-    left: -100%;
-    align-items: center;
-    text-align: center;
-    list-style-type: none;
-    transition: all 0.5s ease;
-    opacity: 1;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+  background: none;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  overflow: auto;
+  position: absolute;
+  top: 8vh;
+  left: -100%;
+  align-items: center;
+  text-align: center;
+  list-style-type: none;
+  transition: all 0.5s ease;
+  opacity: 1;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .navbar-mobile-menu.active {
-    left: 0;
-    transition: all 0.5s ease;
-    position: fixed;
+  left: 0;
+  transition: all 0.5s ease;
+  position: fixed;
 }
 .navbar-mobile-menu li {
-    padding: 2rem;
-    width: 100%;
-    text-align: center;
+  padding: 2rem;
+  width: 100%;
+  text-align: center;
 }
 
 .navbar-mobile-menu li a {
-    text-decoration: none;
-    color: #71808c;
+  text-decoration: none;
+  color: #71808c;
 }
 .navbar-mobile-menu li a:hover {
-    text-decoration: none;
-    color: #bed700;
-    transition: all 0.1s ease-in-out;
+  text-decoration: none;
+  color: #bed700;
+  transition: all 0.1s ease-in-out;
 }

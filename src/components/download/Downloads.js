@@ -1,7 +1,7 @@
 import React from 'react';
 import MaterialTable from '@material-table/core';
 import { useQuery } from '@apollo/client';
-import { Box, Paper, Typography } from '@mui/material';
+import { Box, Paper, Typography, useMediaQuery } from '@mui/material';
 import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
 
 import { ErrorUI } from '../utils/ErrorUI';
@@ -10,6 +10,7 @@ import { Loading } from '../utils/Loading';
 
 export const Downloads = () => {
     const { data, loading, error } = useQuery(GETDOWNLOADS_SORTED_DESC);
+    const matches = useMediaQuery('(min-width:768px)');
     if (loading) return <Loading />;
     if (error) return <ErrorUI error={error.message} />;
     if (!data.downloads.length)
@@ -28,7 +29,7 @@ export const Downloads = () => {
     ];
 
     return (
-        <div className='container' style={{ minHeight: "72vh", position: 'relative' }}>
+        <div className='container' style={{ minHeight: matches ? '72vh' : '82vh', position: 'relative' }}>
             <Typography
                 sx={{ color: 'var(--paragraph-color)', fontWeight: 700, pt: "1rem" }}
                 variant='h5'>
@@ -36,10 +37,10 @@ export const Downloads = () => {
             </Typography>
             <Box
                 sx={{
-                    minWidth: '100%',
-                    maxHeight: "100%",
+                    width: '100%',
+                    height: "100%",
                     pt: "1rem",
-                    borderRadius: '2rem',
+                    borderRadius: '1rem',
                     pb: "1rem"
                 }}>
                 <MaterialTable

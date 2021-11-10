@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
-import { Box, Grid, Typography, Link } from '@mui/material';
+import { Box, Grid, Typography, Link, useMediaQuery } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -12,35 +12,34 @@ import { ErrorUI } from '../../utils/ErrorUI';
 import { Loading } from '../../utils/Loading';
 
 const styles = {
-    footerContainer: {
-        backgroundColor: 'var(--mutual-color)',
-        borderRadius: '4px 4px 0 0',
-        height: '14vh',
-    },
-
-    authorContainer: {
-        padding: '1rem 0',
-    },
-    descriptionContainer: {
-        padding: '1rem 0 ',
-    },
+    // // authorContainer: {
+    // //     padding: '1rem 0',
+    // // },
+    // // descriptionContainer: {
+    // //     padding: '1rem 0 ',
+    // // },
     socialContainer: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: '1rem 0',
+        // padding: '1rem 0',
     },
 };
 
 export const Footer = () => {
     const { data, loading, error } = useQuery(GET_ALL_FOOTER);
-
+    const matches = useMediaQuery('(min-width:768px)');
     if (loading) return <Loading />;
     if (error) return <ErrorUI error={error.message} />;
     if (!data) return null;
 
     return (
-        <Box sx={styles.footerContainer}>
+        <Box sx={{
+            backgroundColor: 'var(--mutual-color)',
+            borderRadius: '4px 4px 0 0',
+            height: matches ? '14vh' : '10rem',
+            padding: '1rem'
+        }}>
             <div className='container'>
                 <Grid container spacing={0}>
                     <Grid item xs={12} md={4} sx={styles.authorContainer}>
