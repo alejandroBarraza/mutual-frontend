@@ -146,7 +146,7 @@ export const NewsById = () => {
                     <Typography variant='h6'>Ultimas Noticias</Typography>
                 </Box>
 
-                <Grid container spacing={2} alignItems='stretch'>
+                <Grid container spacing={6} alignItems='stretch'>
                     {dataNews ? (
                         dataNews.news.map((newData) => (
                             <Grid
@@ -157,9 +157,8 @@ export const NewsById = () => {
                                 md={4}
                                 sx={{
                                     align: 'center',
-                                    height: '26rem',
                                 }}>
-                                <CardNews descriptionInfo key={newData.id} data={newData} />
+                                <CardNews descriptionInfo key={newData.id} data={newData} maxWidth={'345'} />
                             </Grid>
                         ))
                     ) : (
