@@ -93,7 +93,7 @@ export const NewsById = () => {
                                 height: presentationImage !== '#' ? '10rem' : '15rem',
                                 color: '#fff',
                                 fontWeight: 'bold',
-                                fontSize: '3rem',
+                                fontSize: '2rem',
                             }}>
                             {title}
                         </Box>
