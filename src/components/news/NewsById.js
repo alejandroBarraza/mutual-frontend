@@ -31,7 +31,7 @@ export const NewsById = () => {
         loading,
         error,
     } = useQuery(GETNEWS_START_LIMIT, {
-        variables: { start: 0, limit: 6 },
+        variables: { start: 0, limit: 3 },
     });
     const [title, setTitle] = useState('');
     const [presentationImage, setPresentationImage] = useState('#');
