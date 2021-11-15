@@ -6,16 +6,13 @@ exports[`testing <Navbar/> component should match snapshot 1`] = `
     class="wrapper"
   >
     <nav
-      class="navbar container "
+      class="navbar container"
     >
-      <div
-        class="logo"
-      >
-        <img
-          alt="logo-mutual"
-          src="./mutual-svg.svg"
-        />
-      </div>
+      <img
+        alt="logo-mutual"
+        class="image"
+        src="/mutual-svg.svg"
+      />
       <ul
         class="navbar-items"
       >
@@ -46,7 +43,7 @@ exports[`testing <Navbar/> component should match snapshot 1`] = `
         <li>
           <a
             class="navbar-items"
-            href="/"
+            href="/descargables"
           >
             Descargables
           </a>

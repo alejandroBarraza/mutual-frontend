@@ -59,7 +59,7 @@ describe('Testing <Videos/> component at error,loading and data fetched states.'
         );
         await waitFor(() => new Promise((res) => setTimeout(res, 0)));
         const error = container.querySelector('.container-error');
-        console.log(error.innerHTML);
+        // console.log(error.innerHTML);
         expect(error).toMatchSnapshot();
     });
 
@@ -75,7 +75,7 @@ describe('Testing <Videos/> component at error,loading and data fetched states.'
 
     it('should check if function youtoube Parse work properly given a youtube url.', () => {
         const url = youtube_parser('https://www.youtube.com/watch?v=aXzEmJs6_Qk');
-        console.log(url);
+        // // console.log(url);
         expect(url).toBe('aXzEmJs6_Qk');
     });
 });

@@ -6,7 +6,7 @@ import { CircularProgress } from '@mui/material';
 import { IMAGES } from '../../../Graphql/Queries';
 
 /**
- * This component returns a carousel of images from the main page.
+ * This component returns a carousel of images from the main pagef.
  * @returns Carousel of images.
  */
 export const ImagesCarousel = () => {

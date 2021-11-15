@@ -78,7 +78,7 @@ describe('Testing <Statistics component />', () => {
         );
         await waitFor(() => new Promise((res) => setTimeout(res, 0)));
         const error = container.querySelector('.container-error');
-        console.log(error.innerHTML);
+        // console.log(error.innerHTML);
         expect(error).toMatchSnapshot();
     });
 });

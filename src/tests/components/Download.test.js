@@ -94,7 +94,7 @@ describe('Testing <Download/> component at error,loading,empty array and data fe
         );
         await waitFor(() => new Promise((res) => setTimeout(res, 0)));
         const element = screen.getByTestId('no-content');
-        console.log(element);
+        // console.log(element);
         expect(element).toBeInTheDocument();
     });
 });

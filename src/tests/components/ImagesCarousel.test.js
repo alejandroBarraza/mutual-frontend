@@ -1,7 +1,8 @@
 import { render, waitFor } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
-import { IMAGES, ImagesCarousel } from '../../components/home/imagesCarousel/ImagesCarousel';
-import { CircularProgress } from '@material-ui/core';
+import { ImagesCarousel } from '../../components/home/imagesCarousel/ImagesCarousel';
+import { IMAGES } from '../../Graphql/Queries';
+import { CircularProgress } from '@mui/material';
 
 describe('test in <ImagesCarousel /> component', () => {
    const loading = 'Loading...';

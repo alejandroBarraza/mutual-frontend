@@ -12,7 +12,7 @@ exports[`Testing <CardNews/> component  render should march with snapshot 1`] = 
       <img
         alt="testing pic"
         class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-j0zv8p-MuiCardMedia-root"
-        height="140"
+        height="140rem"
       />
       <div
         class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
@@ -21,7 +21,7 @@ exports[`Testing <CardNews/> component  render should march with snapshot 1`] = 
           class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-h93ljk-MuiTypography-root"
         />
         <p
-          class="MuiTypography-root MuiTypography-body2 css-r40f8v-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-body2 css-1cav4l5-MuiTypography-root"
         />
       </div>
       <hr

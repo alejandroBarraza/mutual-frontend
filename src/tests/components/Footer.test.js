@@ -31,7 +31,7 @@ const mocksError = [
     {
         request: {
             query: GET_ALL_FOOTER,
-            variables: { id: null },
+            variables: {},
         },
         error: new Error('An error occurred'),
     },
