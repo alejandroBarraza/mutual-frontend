@@ -1,11 +1,8 @@
 import { useQuery } from '@apollo/client';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { GETNEWSBYID } from '../../Graphql/Queries';
-import { GETNEWS_START_LIMIT } from '../../Graphql/Queries';
-// Convert text to html format
+import { GETNEWSBYID, GETNEWS_START_LIMIT } from '../../Graphql/Queries';
 import showdown from 'showdown';
-// Convert html to jsx because XSS (Cross Site Scripting)
 import { Markup } from 'interweave';
 import { Box, Container, Grid } from '@mui/material';
 import Typography from '@mui/material/Typography';
@@ -14,6 +11,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { styles } from './StyleCardNewsView';
 import { CardNews } from './CardNews';
 import { PriorityDownloads } from '../download/PriorityDownloads';
+import { ErrorUI } from '../utils/ErrorUI';
+import { Loading } from '../utils/Loading';
 
 const converter = new showdown.Converter();
 
@@ -25,12 +24,10 @@ export const NewsById = () => {
      * @param error indicates if any error occurred.
      * @param data the data returned by the database.
      */
-    const { loading: loadingData, error: errorData, data } = useQuery(GETNEWSBYID(id));
-    const {
-        data: dataNews,
-        loading,
-        error,
-    } = useQuery(GETNEWS_START_LIMIT, {
+    const { loading: loadingData, error: errorData, data } = useQuery(GETNEWSBYID, {
+        variables: { new: parseInt(id) },
+    });
+    const { data: dataNews, loading, error } = useQuery(GETNEWS_START_LIMIT, {
         variables: { start: 0, limit: 3 },
     });
     const [title, setTitle] = useState('');
@@ -38,17 +35,20 @@ export const NewsById = () => {
     const [data_procesed, setData_procesed] = useState([]);
     const matches = useMediaQuery('(min-width:60rem)');
 
+
     useEffect(() => {
         setPresentationImage('#');
         if (data) {
-            if (data.new != null) {
+            // // console.log(data);
+            if (data.news != null && data.news.length !== 0) {
                 let data_procesing = [];
-                let html = converter.makeHtml(data.new.cuerpo);
-                if (data.new.titulo != null) {
-                    setTitle(data.new.titulo);
+                let html = converter.makeHtml(data.news[0].cuerpo);
+
+                if (data.news[0].titulo != null) {
+                    setTitle(data.news[0].titulo);
                 }
-                if (data.new.imagenDePresentacion != null) {
-                    setPresentationImage(data.new.imagenDePresentacion.url);
+                if (data.news[0].imagenDePresentacion != null) {
+                    setPresentationImage(data.news[0].imagenDePresentacion.url);
                 }
 
                 html = html.split('<p>').filter((text) => {
@@ -65,6 +65,9 @@ export const NewsById = () => {
             }
         }
     }, [data]);
+
+    if (loading || loadingData) { return <Loading /> }
+    if (error || errorData) { return <ErrorUI error={error} /> }
 
     return (
         <Box

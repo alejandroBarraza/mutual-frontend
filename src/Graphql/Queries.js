@@ -37,21 +37,17 @@ export const IMAGES = gql`
 
 
 // News by ID query
-export const GETNEWSBYID = (id = 0) => {
-    return (
-        gql`
-        query GetNewsById ($newID: ID = ${id}){
-            new ( id:$newID ){
-                titulo
-                cuerpo
-                imagenDePresentacion {
-                    url
-                }
+export const GETNEWSBYID = gql`
+query GetNewsById ($new: Int!){
+        news(where:{ id:$new}){
+            titulo
+            cuerpo
+            imagenDePresentacion {
+                url
             }
         }
-        `
-    )
-}
+    }
+`;
 // get download content given limit and start =="offset" as arguments
 export const GETDOWNLOADS_LIMIT_START = gql`
     query GetDownloads($start: Int!, $limit: Int!) {
