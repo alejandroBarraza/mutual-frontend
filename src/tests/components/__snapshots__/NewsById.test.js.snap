@@ -3,13 +3,11 @@
 exports[`test in <NewsById /> component renders loaded correctly 1`] = `
 <div>
   <div
-    class="container"
+    class="MuiBox-root css-1e13nhz"
   >
-    <div
-      class="container-error"
-    >
-      <p />
-    </div>
+    <p>
+      Error in Data Base
+    </p>
   </div>
 </div>
 `;

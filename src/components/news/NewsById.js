@@ -67,7 +67,19 @@ export const NewsById = () => {
     }, [data]);
 
     if (loading || loadingData) { return <Loading /> }
-    if (error || errorData) { return <ErrorUI error={error} /> }
+    if (errorData || error) {
+        return <Box
+            sx={{
+                minHeight: '72vh',
+                width: '100%',
+                position: 'relative',
+                pb: '2rem',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}><p>Error in Data Base</p>
+        </Box>
+    }
 
     return (
         <Box
