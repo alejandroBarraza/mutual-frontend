@@ -1,10 +1,15 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import { Button, Container, Typography, useMediaQuery } from '@mui/material';
-import { BootstrapInput, styles } from './FormStyles';
 import { useForm } from 'react-hook-form';
+import {
+    Button,
+    Container,
+    Typography,
+    useMediaQuery,
+    InputLabel,
+    FormControl,
+    Box,
+} from '@mui/material';
+import { BootstrapInput, styles } from './FormStyles';
 import { ErrorForm } from './ErrorForm';
 export const Form = () => {
     const matches = useMediaQuery('(min-width:768px)');
@@ -13,23 +18,6 @@ export const Form = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
-
-    // const onSubmit = (data) => {
-    //     e.preventDefault();
-    //     console.log(data);
-    // };
-
-    // const [formValues, handleInputChange, clearForm] = useForm({
-    //     name: '',
-    //     lastName: '',
-    //     email: '',
-    //     phone: '',
-    //     company: '',
-    //     job: '',
-    //     need: '',
-    // });
-
-    // const { name, lastName, email, phone, company, job, need } = formValues;
 
     const onSubmit = (data, e) => {
         e.preventDefault();
