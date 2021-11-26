@@ -3,40 +3,42 @@ import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import { Button, Container, Typography, useMediaQuery } from '@mui/material';
-import { useForm } from '../../hooks/useForm';
 import { BootstrapInput, styles } from './FormStyles';
-
+import { useForm } from 'react-hook-form';
+import { ErrorForm } from './ErrorForm';
 export const Form = () => {
     const matches = useMediaQuery('(min-width:768px)');
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
 
-    const [formValues, handleInputChange, clearForm] = useForm({
-        name: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        company: '',
-        job: '',
-        need: '',
-    });
+    // const onSubmit = (data) => {
+    //     e.preventDefault();
+    //     console.log(data);
+    // };
 
-    const { name, lastName, email, phone, company, job, need } = formValues;
+    // const [formValues, handleInputChange, clearForm] = useForm({
+    //     name: '',
+    //     lastName: '',
+    //     email: '',
+    //     phone: '',
+    //     company: '',
+    //     job: '',
+    //     need: '',
+    // });
 
-    const handleSubmit = (e) => {
+    // const { name, lastName, email, phone, company, job, need } = formValues;
+
+    const onSubmit = (data, e) => {
         e.preventDefault();
         fetch('http://localhost:1337/mensajes/customMail', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                nombre: name,
-                apellido: lastName,
-                correo: email,
-                telefono: phone,
-                empresa: company,
-                cargo: job,
-                descripcion: need,
-            }),
+            body: JSON.stringify(data),
         })
-            .then(() => clearForm())
+            .then(() => e.target.reset())
             .catch((err) => console.log(err));
     };
 
@@ -51,77 +53,84 @@ export const Form = () => {
                     component='form'
                     noValidate
                     autoComplete='off'
-                    onSubmit={handleSubmit}
+                    onSubmit={handleSubmit(onSubmit)}
                     sx={{ display: matches ? 'grid' : 'flex', ...styles.boxForm }}>
                     <FormControl variant='standard'>
                         <InputLabel shrink htmlFor='bootstrap-input' sx={{ fontSize: '1.5rem' }}>
                             Nombre
                         </InputLabel>
-                        <BootstrapInput
-                            name='name'
-                            value={name}
-                            onChange={handleInputChange}
-                            type='text'
-                            required
-                        />
+                        <BootstrapInput {...register('nombre', { required: true })} />
+                        {errors.nombre && <ErrorForm error='El nombre es requierido' />}
                     </FormControl>
                     <FormControl variant='standard'>
                         <InputLabel shrink htmlFor='bootstrap-input' sx={{ fontSize: '1.5rem' }}>
                             Apellido
                         </InputLabel>
-                        <BootstrapInput
-                            name='lastName'
-                            value={lastName}
-                            onChange={handleInputChange}
-                            type='text'
-                            required
-                        />
+                        <BootstrapInput type='text' {...register('apellido', { required: true })} />
+                        {errors.apellido && <ErrorForm error='El apellido es requerido' />}
                     </FormControl>
                     <FormControl variant='standard'>
                         <InputLabel shrink htmlFor='bootstrap-input' sx={{ fontSize: '1.5rem' }}>
                             Correo
                         </InputLabel>
                         <BootstrapInput
-                            name='email'
-                            value={email}
-                            onChange={handleInputChange}
-                            type='mail'
-                            required
+                            type='email'
+                            {...register('correo', {
+                                required: {
+                                    value: true,
+                                    message: 'el correo es requerido',
+                                },
+                                pattern: {
+                                    value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                                    message: 'Ingresar un email valido',
+                                },
+                            })}
                         />
+                        {errors.correo && <ErrorForm error={errors.correo.message} />}
                     </FormControl>
                     <FormControl variant='standard'>
                         <InputLabel shrink htmlFor='bootstrap-input' sx={{ fontSize: '1.5rem' }}>
                             Numero de Telefono
                         </InputLabel>
-                        <BootstrapInput name='phone' value={phone} onChange={handleInputChange} />
+                        <BootstrapInput
+                            placeholder='ejemplo: 89093478'
+                            {...register('telefono', {
+                                required: {
+                                    value: true,
+                                    message: 'el telefono es requerido',
+                                },
+                                minLength: {
+                                    min: 9,
+                                    message: 'El numero debe contener minimo 8 carateres',
+                                },
+                            })}
+                        />
+                        {errors.telefono && <ErrorForm error={errors.telefono.message} />}
                     </FormControl>
                     <FormControl variant='standard'>
                         <InputLabel shrink htmlFor='bootstrap-input' sx={{ fontSize: '1.5rem' }}>
                             Empresa
                         </InputLabel>
-                        <BootstrapInput
-                            name='company'
-                            value={company}
-                            onChange={handleInputChange}
-                        />
+                        <BootstrapInput {...register('empresa', { required: true })} />
+                        {errors.empresa && <ErrorForm error='La empresa es requerida' />}
                     </FormControl>
                     <FormControl variant='standard'>
                         <InputLabel shrink htmlFor='bootstrap-input' sx={{ fontSize: '1.5rem' }}>
                             Cargo
                         </InputLabel>
-                        <BootstrapInput name='job' value={job} onChange={handleInputChange} />
+                        <BootstrapInput {...register('cargo', { required: true })} />
+                        {errors.cargo && <ErrorForm error='El cargo es requerido' />}
                     </FormControl>
                     <FormControl variant='standard' sx={{ gridColumn: '1 / 3' }}>
                         <InputLabel shrink htmlFor='bootstrap-input' sx={{ fontSize: '1.5rem' }}>
                             Cuentanos tus necesidades
                         </InputLabel>
                         <BootstrapInput
-                            name='need'
-                            value={need}
-                            onChange={handleInputChange}
+                            {...register('descripcion', { required: true })}
                             multiline
                             maxRows={6}
                         />
+                        {errors.descripcion && <ErrorForm error='La descripcion es requerida' />}
                     </FormControl>
                     <Button type='submit' variant='contained' color='success' sx={styles.boxButton}>
                         Enviar
