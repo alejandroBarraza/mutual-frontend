@@ -21,7 +21,7 @@ export const NavbarItem = [
     },
     {
         title: 'Contactanos',
-        url: '#',
+        url: '/form',
         cName: 'navbar-items',
     },
 ];
