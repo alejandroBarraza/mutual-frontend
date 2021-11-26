@@ -11,7 +11,6 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { styles } from './StyleCardNewsView';
 import { CardNews } from './CardNews';
 import { PriorityDownloads } from '../download/PriorityDownloads';
-import { ErrorUI } from '../utils/ErrorUI';
 import { Loading } from '../utils/Loading';
 
 const converter = new showdown.Converter();
@@ -24,17 +23,24 @@ export const NewsById = () => {
      * @param error indicates if any error occurred.
      * @param data the data returned by the database.
      */
-    const { loading: loadingData, error: errorData, data } = useQuery(GETNEWSBYID, {
+    const {
+        loading: loadingData,
+        error: errorData,
+        data,
+    } = useQuery(GETNEWSBYID, {
         variables: { new: parseInt(id) },
     });
-    const { data: dataNews, loading, error } = useQuery(GETNEWS_START_LIMIT, {
+    const {
+        data: dataNews,
+        loading,
+        error,
+    } = useQuery(GETNEWS_START_LIMIT, {
         variables: { start: 0, limit: 3 },
     });
     const [title, setTitle] = useState('');
     const [presentationImage, setPresentationImage] = useState('#');
     const [data_procesed, setData_procesed] = useState([]);
     const matches = useMediaQuery('(min-width:60rem)');
-
 
     useEffect(() => {
         setPresentationImage('#');
@@ -66,19 +72,24 @@ export const NewsById = () => {
         }
     }, [data]);
 
-    if (loading || loadingData) { return <Loading /> }
+    if (loading || loadingData) {
+        return <Loading />;
+    }
     if (errorData || error) {
-        return <Box
-            sx={{
-                minHeight: '72vh',
-                width: '100%',
-                position: 'relative',
-                pb: '2rem',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}><p>Error in Data Base</p>
-        </Box>
+        return (
+            <Box
+                sx={{
+                    minHeight: '72vh',
+                    width: '100%',
+                    position: 'relative',
+                    pb: '2rem',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}>
+                <p>Error in Data Base</p>
+            </Box>
+        );
     }
 
     return (
@@ -173,7 +184,12 @@ export const NewsById = () => {
                                 sx={{
                                     align: 'center',
                                 }}>
-                                <CardNews descriptionInfo key={newData.id} data={newData} maxWidth={'345'} />
+                                <CardNews
+                                    descriptionInfo
+                                    key={newData.id}
+                                    data={newData}
+                                    maxWidth={'345'}
+                                />
                             </Grid>
                         ))
                     ) : (
