@@ -48,7 +48,7 @@ export const Form = () => {
                             Nombre
                         </InputLabel>
                         <BootstrapInput {...register('nombre', { required: true })} />
-                        {errors.nombre && <ErrorForm error='El nombre es requierido' />}
+                        {errors.nombre && <ErrorForm error='El nombre es requerido' />}
                     </FormControl>
                     <FormControl variant='standard'>
                         <InputLabel shrink htmlFor='bootstrap-input' sx={{ fontSize: '1.5rem' }}>
@@ -66,11 +66,11 @@ export const Form = () => {
                             {...register('correo', {
                                 required: {
                                     value: true,
-                                    message: 'el correo es requerido',
+                                    message: 'El correo es requerido',
                                 },
                                 pattern: {
                                     value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                                    message: 'Ingresar un email valido',
+                                    message: 'Ingresar un email válido',
                                 },
                             })}
                         />
@@ -85,11 +85,11 @@ export const Form = () => {
                             {...register('telefono', {
                                 required: {
                                     value: true,
-                                    message: 'el telefono es requerido',
+                                    message: 'el teléfono es requerido',
                                 },
                                 minLength: {
                                     min: 9,
-                                    message: 'El numero debe contener minimo 8 carateres',
+                                    message: 'El número debe contener minimo 8 caracteres',
                                 },
                             })}
                         />
@@ -118,7 +118,7 @@ export const Form = () => {
                             multiline
                             maxRows={6}
                         />
-                        {errors.descripcion && <ErrorForm error='La descripcion es requerida' />}
+                        {errors.descripcion && <ErrorForm error='La descripción es requerida' />}
                     </FormControl>
                     <Button type='submit' variant='contained' color='success' sx={styles.boxButton}>
                         Enviar
