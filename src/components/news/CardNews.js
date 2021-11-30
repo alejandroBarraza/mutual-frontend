@@ -5,17 +5,23 @@ import { Link } from 'react-router-dom';
 
 import { Card, Divider, CardContent, CardMedia, Typography } from '@mui/material';
 import { Box } from '@mui/system';
+import { animateScroll as scroll } from "react-scroll";
 
 import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
 import IosShareRoundedIcon from '@mui/icons-material/IosShareRounded';
 
 import { styles } from './StyleCardNews';
 
+const scrollToTop = () => {
+    scroll.scrollToTop();
+};
+
 export const CardNews = ({ descriptionInfo, data, maxWidth }) => {
     const { id, descripcion, imagen, titulo, tiempoLectura } = data;
+
     return (
         data && (
-            <Link style={{ textDecoration: 'none' }} to={`../noticias/${id}`}>
+            <Link style={{ textDecoration: 'none' }} to={`../noticias/${id}`} onClick={scrollToTop} >
                 <Card sx={{ ...styles.card, maxWidth }}>
                     <CardMedia
                         component='img'

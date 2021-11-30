@@ -1,7 +1,7 @@
 export const NavbarItem = [
     {
         title: 'Inicio',
-        url: '#',
+        url: '/',
         cName: 'navbar-items'
     },
     {
