@@ -81,14 +81,14 @@ export const Form = () => {
                             Numero de Telefono
                         </InputLabel>
                         <BootstrapInput
-                            placeholder='ejemplo: 89093478'
+                            placeholder='+569 XXXX XXXX'
                             {...register('telefono', {
                                 required: {
                                     value: true,
                                     message: 'el teléfono es requerido',
                                 },
                                 minLength: {
-                                    min: 9,
+                                    min: 8,
                                     message: 'El número debe contener minimo 8 caracteres',
                                 },
                             })}
