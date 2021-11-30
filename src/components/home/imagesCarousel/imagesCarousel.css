@@ -45,11 +45,12 @@
   width: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .gallery {
     flex-direction: column;
     height: 100%;
-    width: 95%;
+    width: 100%;
+    margin: 0;
   }
   .gallery__text {
     width: 95%;
