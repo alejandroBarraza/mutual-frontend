@@ -36,18 +36,16 @@ export const Footer = () => {
     return (
         <Box sx={{
             backgroundColor: 'var(--mutual-color)',
-            borderRadius: '4px 4px 0 0',
-            height: matches ? '14vh' : '10rem',
-            padding: '1rem'
+            height: matches ? '14vh' : '12rem',
         }}>
-            <div className='container'>
-                <Grid container spacing={0}>
-                    <Grid item xs={12} md={4} sx={styles.authorContainer}>
+            <Box className='containerFooter'>
+                <Grid container spacing={2} direction="row" justifyContent="space-between" alignItems="center" >
+                    <Grid item xs={12} md={4}>
                         <Typography variant='subtitle2' color='common.white' align='center'>
                             {data.footer.selloSeguridad}
                         </Typography>
                     </Grid>
-                    <Grid item xs={12} md={4} sx={styles.descriptionContainer}>
+                    <Grid item xs={12} md={4}>
                         <Typography variant='subtitle2' color='common.white' align='center'>
                             {data.footer.descripcion}
                         </Typography>
@@ -62,7 +60,6 @@ export const Footer = () => {
                                     />
                                 </Link>
                             ) : null}
-
                             {data.footer.facebook ? (
                                 <Link href={data.footer.facebook} target='_blank' rel='noopener'>
                                     <FacebookIcon
@@ -85,7 +82,7 @@ export const Footer = () => {
                         </Box>
                     </Grid>
                 </Grid>
-            </div>
-        </Box>
+            </Box>
+        </Box >
     );
 };

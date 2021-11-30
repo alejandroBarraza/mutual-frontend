@@ -168,34 +168,35 @@ export const NewsById = () => {
                         <PriorityDownloads />
                     </Box>
                 </Box>
-                <Box textAling='left' sx={styles.titleContainerNews}>
-                    <Typography variant='h6'>Ultimas Noticias</Typography>
-                </Box>
-
-                <Grid container spacing={6} alignItems='stretch'>
-                    {dataNews ? (
-                        dataNews.news.map((newData) => (
-                            <Grid
-                                key={newData.id}
-                                item
-                                xs={12}
-                                sm={6}
-                                md={4}
-                                sx={{
-                                    align: 'center',
-                                }}>
-                                <CardNews
-                                    descriptionInfo
+                <div id='news'>
+                    <Box textAling='left' sx={styles.titleContainerNews}>
+                        <Typography variant='h6'>Ultimas Noticias</Typography>
+                    </Box>
+                    <Grid container spacing={6} alignItems='stretch'>
+                        {dataNews ? (
+                            dataNews.news.map((newData) => (
+                                <Grid
                                     key={newData.id}
-                                    data={newData}
-                                    maxWidth={'345'}
-                                />
-                            </Grid>
-                        ))
-                    ) : (
-                        <Skeleton variant='rectangular' width={'100%'} height={'100%'} />
-                    )}
-                </Grid>
+                                    item
+                                    xs={12}
+                                    sm={6}
+                                    md={4}
+                                    sx={{
+                                        align: 'center',
+                                    }}>
+                                    <CardNews
+                                        descriptionInfo
+                                        key={newData.id}
+                                        data={newData}
+                                        maxWidth={'345'}
+                                    />
+                                </Grid>
+                            ))
+                        ) : (
+                            <Skeleton variant='rectangular' width={'100%'} height={'100%'} />
+                        )}
+                    </Grid>
+                </div>
             </Container>
         </Box>
     );
