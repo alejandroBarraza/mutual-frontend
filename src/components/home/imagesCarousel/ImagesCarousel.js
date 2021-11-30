@@ -4,6 +4,7 @@ import { Carousel } from 'react-carousel-minimal';
 import { useQuery } from '@apollo/client';
 import { CircularProgress } from '@mui/material';
 import { IMAGES } from '../../../Graphql/Queries';
+import '../../../container.css'
 
 /**
  * This component returns a carousel of images from the main pagef.
@@ -52,52 +53,55 @@ export const ImagesCarousel = () => {
 
     return (
         <div className='container__gallery'>
-            <div className='gallery'>
-                <div className='gallery__text'>
-                    <h1 id='titleCarousel'>{titleCarousel}</h1>
-                    <p id='descriptionCarousel' className='text'>
-                        {descriptionCarousel}
-                    </p>
-                </div>
-                <div id='gallery__images' className='gallery__images'>
-                    {
-                        // If it is loading it returns a Progress Component, otherwise it returns the Component with the corresponding data.
-                        loading ? (
-                            <div id='loading__icon' className='loading__icon'>
-                                <CircularProgress />
-                            </div>
-                        ) : (
-                            <Carousel
-                                data={images}
-                                time={5000}
-                                radius='16px'
-                                slideNumber={false}
-                                slideNumberStyle={{
-                                    fontSize: '20px',
-                                    fontWeight: 'bold',
-                                }}
-                                captionPosition='bottom'
-                                automatic={true}
-                                dots={true}
-                                pauseIconColor='white'
-                                pauseIconSize='40px'
-                                slideBackgroundColor='darkgrey'
-                                slideImageFit='cover'
-                                thumbnails={false}
-                                thumbnailWidth='100px'
-                                style={{
-                                    textAlign: 'center',
-                                    width: '100%',
-                                    maxWidth: '600px',
-                                    maxHeight: '600px',
-                                    margin: 'auto auto',
-                                    overflowY: 'true',
-                                }}
-                            />
-                        )
-                    }
+            <div className='container'>
+                <div className='gallery'>
+                    <div className='gallery__text'>
+                        <h1 id='titleCarousel'>{titleCarousel}</h1>
+                        <p id='descriptionCarousel' className='text'>
+                            {descriptionCarousel}
+                        </p>
+                    </div>
+                    <div id='gallery__images' className='gallery__images'>
+                        {
+                            // If it is loading it returns a Progress Component, otherwise it returns the Component with the corresponding data.
+                            loading ? (
+                                <div id='loading__icon' className='loading__icon'>
+                                    <CircularProgress />
+                                </div>
+                            ) : (
+                                <Carousel
+                                    data={images}
+                                    time={5000}
+                                    radius='16px'
+                                    slideNumber={false}
+                                    slideNumberStyle={{
+                                        fontSize: '20px',
+                                        fontWeight: 'bold',
+                                    }}
+                                    captionPosition='bottom'
+                                    automatic={true}
+                                    dots={true}
+                                    pauseIconColor='white'
+                                    pauseIconSize='40px'
+                                    slideBackgroundColor='darkgrey'
+                                    slideImageFit='cover'
+                                    thumbnails={false}
+                                    thumbnailWidth='100px'
+                                    style={{
+                                        textAlign: 'center',
+                                        width: '100%',
+                                        maxWidth: '600px',
+                                        maxHeight: '600px',
+                                        margin: 'auto auto',
+                                        overflowY: 'true',
+                                    }}
+                                />
+                            )
+                        }
+                    </div>
                 </div>
             </div>
+
         </div>
     );
 };
