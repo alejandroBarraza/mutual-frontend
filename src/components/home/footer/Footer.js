@@ -12,12 +12,6 @@ import { ErrorUI } from '../../utils/ErrorUI';
 import { Loading } from '../../utils/Loading';
 
 const styles = {
-    // // authorContainer: {
-    // //     padding: '1rem 0',
-    // // },
-    // // descriptionContainer: {
-    // //     padding: '1rem 0 ',
-    // // },
     socialContainer: {
         display: 'flex',
         justifyContent: 'center',
@@ -37,6 +31,8 @@ export const Footer = () => {
         <Box sx={{
             backgroundColor: 'var(--mutual-color)',
             height: matches ? '14vh' : '12rem',
+            paddingTop: '1rem',
+            paddingBottom: '1rem',
         }}>
             <Box className='containerFooter'>
                 <Grid container spacing={2} direction="row" justifyContent="space-between" alignItems="center" >
