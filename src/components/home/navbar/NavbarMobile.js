@@ -28,21 +28,40 @@ export const NavbarMobile = () => {
             </nav>
             <ul className={navClicked ? 'navbar-mobile-menu' : 'navbar-mobile-menu active'}>
                 {NavbarItem.map((item, index) => (
-                    <li key={index}>
-                        {item.section != null ?
-                            <Lonk
-                                activeClass="active"
-                                to={item.section}
-                                spy={true}
-                                smooth={true}
-                                offset={-70}
-                                duration={500}
-                                onClick={handleClick}>
-                                <a href={item.url}>{item.title}</a>
-                            </Lonk> :
+                    // // <li key={index}>
+                    // //     {item.section != null ?
+                    // //         <Lonk
+                    // //             activeClass="active"
+                    // //             to={item.section}
+                    // //             spy={true}
+                    // //             smooth={true}
+                    // //             offset={-70}
+                    // //             duration={500}
+                    // //             onClick={handleClick}>
+                    // //             <a href={item.url}>{item.title}</a>
+                    // //         </Lonk> :
+                    // //         <a href={item.url}>{item.title}</a>
+                    // //     }
+                    // // </li>
+                    item.section != null ?
+                        <Lonk
+                            activeClass="active"
+                            to={item.section}
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}
+                            onClick={handleClick}>
+                            <Link to={item.url}>
+                                <li key={index} >
+                                    <a href={item.url}>{item.title}</a>
+                                </li>
+                            </Link>
+                        </Lonk>
+                        :
+                        <li key={index}>
                             <a href={item.url}>{item.title}</a>
-                        }
-                    </li>
+                        </li>
                 ))}
             </ul>
         </div>

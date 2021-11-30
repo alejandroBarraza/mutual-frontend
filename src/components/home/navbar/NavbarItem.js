@@ -6,7 +6,7 @@ export const NavbarItem = [
     },
     {
         title: 'Noticias',
-        url: '#',
+        url: '/',
         cName: 'navbar-items',
         section: 'news'
     },

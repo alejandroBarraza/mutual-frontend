@@ -15,19 +15,20 @@ export const NavbarbarDesktop = () => {
                 </Link>
                 <ul className='navbar-items'>
                     {NavbarItem.map((item, index) => (
-                        <li key={index}>
-                            <Lonk
-                                activeClass="active"
-                                to={item.section}
-                                spy={true}
-                                smooth={true}
-                                offset={-70}
-                                duration={500}>
+                        <Lonk
+                            activeClass="active"
+                            to={item.section}
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}>
+                            <li key={index}>
                                 <Link className={item.cName} to={item.url}>
                                     {item.title}
                                 </Link>
-                            </Lonk>
-                        </li>
+                            </li>
+                        </Lonk>
+
                     ))}
                 </ul>
             </nav>
