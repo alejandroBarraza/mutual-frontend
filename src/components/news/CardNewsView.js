@@ -38,33 +38,40 @@ export const CardNewsView = () => {
     if (error) return <ErrorUI error={error.message} />;
 
     return (
-        <div className='container'>
-            <Box textAling='center' sx={styles.titleContainer}>
-                <Typography variant='h3'>Ultimas Noticias</Typography>
-                <Typography variant='h5' align='center'>
-                    todo acerca de las ultimas noticas y eventos Aun te espero
-                </Typography>
-            </Box>
+        <div style={{
+            background: '#e5e5e583',
+            paddingTop: "2rem",
+            paddingBottom: "2rem",
+        }}>
+            <div className='container'>
+                <Box textAling='center' sx={styles.titleContainer}>
+                    <Typography variant='h3'>Ultimas Noticias</Typography>
+                    <Typography variant='h5' align='center'>
+                        todo acerca de las ultimas noticas y eventos Aun te espero
+                    </Typography>
+                </Box>
 
-            <Grid container spacing={6} alignItems='stretch'>
-                {data.news.map((newData) => (
-                    <Grid key={newData.id} item xs={12} sm={6} md={4} sx={{ align: 'center' }}>
-                        <CardNews
-                            descriptionInfo
-                            key={newData.id}
-                            data={newData}
-                            maxWidth={'345'}
-                        />
-                    </Grid>
-                ))}
-            </Grid>
+                <Grid container spacing={6} alignItems='stretch'>
+                    {data.news.map((newData) => (
+                        <Grid key={newData.id} item xs={12} sm={6} md={4} sx={{ align: 'center' }}>
+                            <CardNews
+                                descriptionInfo
+                                key={newData.id}
+                                data={newData}
+                                maxWidth={'345'}
+                            />
+                        </Grid>
+                    ))}
+                </Grid>
 
-            <Box textAlign='center' m={8}>
-                <Button variant='contained' color='success' onClick={handleFetchMore}>
-                    Ver mas
-                </Button>
-            </Box>
+                <Box textAlign='center' m={8}>
+                    <Button variant='contained' color='success' onClick={handleFetchMore}>
+                        Ver mas
+                    </Button>
+                </Box>
+            </div>
         </div>
+
     );
 };
 

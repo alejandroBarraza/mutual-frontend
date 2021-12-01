@@ -1,6 +1,6 @@
 .container__gallery {
   width: 100%;
-  background-color: #e5e5e5;
+  background-color: #e5e5e583;
   margin: 0;
 }
 
@@ -14,7 +14,6 @@
   align-items: center;
   padding: 5% 0;
   gap: 1rem;
-  background-color: #e5e5e5;
 }
 
 .gallery__text {
