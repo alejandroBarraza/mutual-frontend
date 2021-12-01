@@ -171,7 +171,7 @@ export const NewsById = () => {
                 </Box>
                 <div id='news'>
                     <Box textAling='left' sx={styles.titleContainerNews}>
-                        <Typography variant='h6'>Ultimas Noticias</Typography>
+                        <Typography variant='h5'>Ultimas Noticias</Typography>
                     </Box>
                     <Grid container spacing={6} alignItems='stretch'>
                         {dataNews ? (

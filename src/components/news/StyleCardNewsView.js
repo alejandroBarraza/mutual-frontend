@@ -13,8 +13,8 @@ export const styles = {
     titleContainerNews: {
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'left',
-        margin: '0',
+        alignItems: 'center',
+        marginBottom: '1rem',
         '& h5': {
             padding: '2rem 0',
             color: 'var(--paragraph-color)',
