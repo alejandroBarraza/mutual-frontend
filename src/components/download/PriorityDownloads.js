@@ -18,9 +18,10 @@ export const PriorityDownloads = () => {
             {data && data.downloads.lengh !== 0 ? (
                 data.downloads.map((element) => {
                     return (
-                        <Box sx={{ width: '100%', py: '.3rem' }} key={element.id}>
-                            <ActionAreaCard download={element} />
-                        </Box>
+                        (element.imagen != null && element.archivo != null) ?
+                            <Box sx={{ width: '100%', py: '.3rem' }} key={element.id}>
+                                <ActionAreaCard download={element} />
+                            </Box> : null
                     );
                 })
             ) : (
