@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import MenuOpenRoundedIcon from '@mui/icons-material/MenuOpenRounded';
-import { Link as Lonk, animateScroll as scroll } from "react-scroll";
+import { Link as Lonk } from "react-scroll";
 import '../../../container.css';
 import './NavbarMobile.css';
 import { NavbarItem } from './NavbarItem';

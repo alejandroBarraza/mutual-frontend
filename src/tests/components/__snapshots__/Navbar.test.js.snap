@@ -8,36 +8,35 @@ exports[`testing <Navbar/> component should match snapshot 1`] = `
     <nav
       class="navbar container"
     >
-      <img
-        alt="logo-mutual"
-        class="image"
-        src="/mutual-svg.svg"
-      />
+      <a
+        class="link"
+        href="/"
+      >
+        <img
+          alt="logo-mutual"
+          class="image"
+          src="/mutual-svg.svg"
+        />
+      </a>
       <ul
         class="navbar-items"
       >
         <li>
           <a
             class="navbar-items"
-            href="/noticias"
-          >
-            Noticias
-          </a>
-        </li>
-        <li>
-          <a
-            class="navbar-items"
-            href="/admin"
-          >
-            Testimonios
-          </a>
-        </li>
-        <li>
-          <a
-            class="navbar-items"
             href="/"
           >
-            Casos
+            Inicio
+          </a>
+        </li>
+        <li>
+          <a>
+            <a
+              class="navbar-items"
+              href="/"
+            >
+              Noticias
+            </a>
           </a>
         </li>
         <li>
@@ -51,7 +50,7 @@ exports[`testing <Navbar/> component should match snapshot 1`] = `
         <li>
           <a
             class="navbar-items"
-            href="/"
+            href="/form"
           >
             Contactanos
           </a>

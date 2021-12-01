@@ -6,68 +6,73 @@ exports[`test in <ImagesCarousel /> component renders loaded correctly 1`] = `
     class="container__gallery"
   >
     <div
-      class="gallery"
+      class="container"
     >
       <div
-        class="gallery__text"
-      >
-        <h1
-          id="titleCarousel"
-        >
-          Titulo del Carrusel
-        </h1>
-        <p
-          class="text"
-          id="descriptionCarousel"
-        >
-          Suspendisse potenti. Praesent sed tristique turpis. Aliquam quis ullamcorper nulla, eu dignissim urna. Fusce id quam eget sem pulvinar euismod et vel velit. Cras a sapien sit amet nulla lobortis ultricies. Pellentesque quis risus nec orci tincidunt fringilla. Nulla ut consequat libero, in gravida augue.
-        </p>
-      </div>
-      <div
-        class="gallery__images"
-        id="gallery__images"
+        class="gallery"
       >
         <div
-          class="box"
-          style="text-align: center; width: 100%; max-width: 600px; max-height: 600px; margin: auto auto; overflow-y: true;"
+          class="gallery__text"
+        >
+          <h1
+            class="titleCarousel"
+            id="titleCarousel"
+          >
+            Titulo del Carrusel
+          </h1>
+          <p
+            class="text"
+            id="descriptionCarousel"
+          >
+            Suspendisse potenti. Praesent sed tristique turpis. Aliquam quis ullamcorper nulla, eu dignissim urna. Fusce id quam eget sem pulvinar euismod et vel velit. Cras a sapien sit amet nulla lobortis ultricies. Pellentesque quis risus nec orci tincidunt fringilla. Nulla ut consequat libero, in gravida augue.
+          </p>
+        </div>
+        <div
+          class="gallery__images"
+          id="gallery__images"
         >
           <div
-            style="max-width: 600px; max-height: 400px;"
+            class="box"
+            style="text-align: center; width: 100%; max-width: 600px; max-height: 600px; margin: auto auto; overflow-y: true;"
           >
-            <div>
-              <div
-                class="carousel-container"
-                style="max-width: 600px; height: 400px; background-color: darkgrey; border-radius: 16px;"
-              >
+            <div
+              style="max-width: 600px; max-height: 400px;"
+            >
+              <div>
                 <div
-                  class="carousel-item fade"
-                  style="max-width: 600px; max-height: 400px; display: block;"
+                  class="carousel-container"
+                  style="max-width: 600px; height: 400px; background-color: darkgrey; border-radius: 16px;"
                 >
-                  <img
-                    class="carousel-image"
-                    src="https://res.cloudinary.com/dkfgeruxd/image/upload/v1633210266/IMG_20210917_210700_e0ed0f7c2f.jpg"
-                    style="border-radius: 16px; object-fit: cover;"
-                  />
                   <div
-                    class="carousel-caption-bottom"
-                  />
-                </div>
-                <a
-                  class="prev"
-                >
-                  ❮
-                </a>
-                <a
-                  class="next"
-                >
-                  ❯
-                </a>
-                <div
-                  class="dots"
-                >
-                  <span
-                    class="dot active"
-                  />
+                    class="carousel-item fade"
+                    style="max-width: 600px; max-height: 400px; display: block;"
+                  >
+                    <img
+                      class="carousel-image"
+                      src="https://res.cloudinary.com/dkfgeruxd/image/upload/v1633210266/IMG_20210917_210700_e0ed0f7c2f.jpg"
+                      style="border-radius: 16px; object-fit: cover;"
+                    />
+                    <div
+                      class="carousel-caption-bottom"
+                    />
+                  </div>
+                  <a
+                    class="prev"
+                  >
+                    ❮
+                  </a>
+                  <a
+                    class="next"
+                  >
+                    ❯
+                  </a>
+                  <div
+                    class="dots"
+                  >
+                    <span
+                      class="dot active"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -93,50 +98,55 @@ exports[`test in <ImagesCarousel /> component renders loading correctly 1`] = `
     class="container__gallery"
   >
     <div
-      class="gallery"
+      class="container"
     >
       <div
-        class="gallery__text"
-      >
-        <h1
-          id="titleCarousel"
-        >
-          Loading...
-        </h1>
-        <p
-          class="text"
-          id="descriptionCarousel"
-        >
-          Loading...
-        </p>
-      </div>
-      <div
-        class="gallery__images"
-        id="gallery__images"
+        class="gallery"
       >
         <div
-          class="loading__icon"
-          id="loading__icon"
+          class="gallery__text"
         >
-          <span
-            class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-18lrjg1-MuiCircularProgress-root"
-            role="progressbar"
-            style="width: 40px; height: 40px;"
+          <h1
+            class="titleCarousel"
+            id="titleCarousel"
           >
-            <svg
-              class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
-              viewBox="22 22 44 44"
+            Loading...
+          </h1>
+          <p
+            class="text"
+            id="descriptionCarousel"
+          >
+            Loading...
+          </p>
+        </div>
+        <div
+          class="gallery__images"
+          id="gallery__images"
+        >
+          <div
+            class="loading__icon"
+            id="loading__icon"
+          >
+            <span
+              class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-18lrjg1-MuiCircularProgress-root"
+              role="progressbar"
+              style="width: 40px; height: 40px;"
             >
-              <circle
-                class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
-                cx="44"
-                cy="44"
-                fill="none"
-                r="20.2"
-                stroke-width="3.6"
-              />
-            </svg>
-          </span>
+              <svg
+                class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                viewBox="22 22 44 44"
+              >
+                <circle
+                  class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+                  cx="44"
+                  cy="44"
+                  fill="none"
+                  r="20.2"
+                  stroke-width="3.6"
+                />
+              </svg>
+            </span>
+          </div>
         </div>
       </div>
     </div>

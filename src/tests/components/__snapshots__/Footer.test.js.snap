@@ -3,13 +3,13 @@
 exports[`Testing <Footer/> component at error,loading and data fetched states. should match <Footer/> component with Snaphshot 1`] = `
 <div>
   <div
-    class="MuiBox-root css-m93lgl"
+    class="MuiBox-root css-1836vpi"
   >
     <div
-      class="container"
+      class="containerFooter MuiBox-root css-0"
     >
       <div
-        class="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-3r4f5f-MuiGrid-root"
       >
         <div
           class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 css-17dw2p9-MuiGrid-root"
