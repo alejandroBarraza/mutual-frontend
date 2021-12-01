@@ -10,11 +10,6 @@ export const NavbarItem = [
         cName: 'navbar-items',
         section: 'news'
     },
-    // {
-    //     title: 'Casos',
-    //     url: '#',
-    //     cName: 'navbar-items',
-    // },
     {
         title: 'Descargables',
         url: '/descargables',

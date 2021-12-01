@@ -35,6 +35,7 @@
 
 .text {
   font-size: 1.3rem;
+  text-align: left;
 }
 
 .loading__icon {
@@ -63,6 +64,9 @@
   }
   .text {
     font-size: 1rem;
-    text-justify: distribute;
+    text-align: center;
+  }
+  .titleCarousel {
+    text-align: center;
   }
 }

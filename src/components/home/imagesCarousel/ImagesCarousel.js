@@ -56,7 +56,7 @@ export const ImagesCarousel = () => {
             <div className='container'>
                 <div className='gallery'>
                     <div className='gallery__text'>
-                        <h1 id='titleCarousel'>{titleCarousel}</h1>
+                        <h1 id='titleCarousel' className='titleCarousel'>{titleCarousel}</h1>
                         <p id='descriptionCarousel' className='text'>
                             {descriptionCarousel}
                         </p>
