@@ -155,6 +155,7 @@ export const NewsById = () => {
                                         sx={{
                                             textAlign: element.includes('src') ? 'center' : 'left',
                                             position: 'relative',
+                                            paddingBottom: '1.5rem'
                                         }}>
                                         <Markup content={element} />
                                     </Box>
