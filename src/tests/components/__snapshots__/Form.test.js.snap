@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test in <Form /> component renders loaded correctly 1`] = `
+<div>
+  <div
+    class="MuiBox-root css-lw6ge8"
+  >
+    <div
+      class="MuiBox-root css-htakcv"
+    />
+    <div
+      class="MuiContainer-root MuiContainer-maxWidthLg css-dke64x-MuiContainer-root"
+    >
+      <div
+        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      >
+        <div
+          class="MuiBox-root css-1e98ng6"
+        >
+          Contacto
+        </div>
+      </div>
+      <form
+        autocomplete="off"
+        class="MuiBox-root css-1ntafzr"
+        novalidate=""
+      >
+        <div
+          class="MuiFormControl-root css-1nrlq1o-MuiFormControl-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-1qwi02l-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="true"
+            for="bootstrap-input"
+          >
+            Nombre
+          </label>
+          <div
+            class="MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1scu3a5-MuiInputBase-root"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input css-yz9k0d-MuiInputBase-input"
+              name="nombre"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root css-1nrlq1o-MuiFormControl-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-1qwi02l-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="true"
+            for="bootstrap-input"
+          >
+            Apellido
+          </label>
+          <div
+            class="MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1scu3a5-MuiInputBase-root"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input css-yz9k0d-MuiInputBase-input"
+              name="apellido"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root css-1nrlq1o-MuiFormControl-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-1qwi02l-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="true"
+            for="bootstrap-input"
+          >
+            Correo
+          </label>
+          <div
+            class="MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1scu3a5-MuiInputBase-root"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input css-yz9k0d-MuiInputBase-input"
+              name="correo"
+              type="email"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root css-1nrlq1o-MuiFormControl-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-1qwi02l-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="true"
+            for="bootstrap-input"
+          >
+            Numero de Telefono
+          </label>
+          <div
+            class="MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1scu3a5-MuiInputBase-root"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input css-yz9k0d-MuiInputBase-input"
+              name="telefono"
+              placeholder="+569 XXXX XXXX"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root css-1nrlq1o-MuiFormControl-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-1qwi02l-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="true"
+            for="bootstrap-input"
+          >
+            Empresa
+          </label>
+          <div
+            class="MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1scu3a5-MuiInputBase-root"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input css-yz9k0d-MuiInputBase-input"
+              name="empresa"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root css-1nrlq1o-MuiFormControl-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-1qwi02l-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="true"
+            for="bootstrap-input"
+          >
+            Cargo
+          </label>
+          <div
+            class="MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1scu3a5-MuiInputBase-root"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input css-yz9k0d-MuiInputBase-input"
+              name="cargo"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class="MuiFormControl-root css-1pu5int-MuiFormControl-root"
+        >
+          <label
+            class="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-1qwi02l-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink="true"
+            for="bootstrap-input"
+          >
+            Cuentanos tus necesidades
+          </label>
+          <div
+            class="MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-multiline css-1hjnjn-MuiInputBase-root"
+          >
+            <textarea
+              aria-invalid="false"
+              class="MuiInputBase-input MuiInputBase-inputMultiline css-rhrbtd-MuiInputBase-input"
+              name="descripcion"
+              style="height: 0px; overflow: hidden;"
+            />
+            <textarea
+              aria-hidden="true"
+              class="MuiInputBase-input MuiInputBase-inputMultiline css-rhrbtd-MuiInputBase-input"
+              readonly=""
+              style="visibility: hidden; position: absolute; overflow: hidden; height: 0px; top: 0px; left: 0px; transform: translateZ(0); padding: 0px; width: 100%;"
+              tabindex="-1"
+            />
+          </div>
+        </div>
+        <button
+          class="MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-6rrm7x-MuiButtonBase-root-MuiButton-root"
+          tabindex="0"
+          type="submit"
+        >
+          Enviar
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;
