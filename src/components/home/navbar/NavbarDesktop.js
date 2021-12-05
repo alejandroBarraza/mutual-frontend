@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import { NavbarItem } from './NavbarItem';
 import './NavbarDesktop.css';
 import '../../../container.css';
-import { Link as Lonk, animateScroll as scroll } from "react-scroll";
+import { Link as Lonk} from "react-scroll";
+
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import {Tooltip,IconButton,Link as LinkMui} from '@mui/material';
+
 
 
 export const NavbarbarDesktop = () => {
@@ -38,6 +42,13 @@ export const NavbarbarDesktop = () => {
                             </li>
                     ))}
                 </ul>
+                <Tooltip title="Iniciar Sección">
+                    <IconButton>
+                        <LinkMui href='https://www.google.com' target='_blank' rel='noopener'>
+                            <AccountCircleIcon sx={{color:'#91B722'}}/>
+                        </LinkMui>
+                    </IconButton>
+                </Tooltip>
             </nav>
         </div>
     );

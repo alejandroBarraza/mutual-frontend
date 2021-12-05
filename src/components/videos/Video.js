@@ -4,6 +4,7 @@ import { Query } from '../utils/Query';
 import { YoutubeEmbed } from './YoutubeEmbed';
 import { GETVIDEOS } from '../../Graphql/Queries';
 
+
 import './Video.css';
 import '../../container.css';
 

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { useForm } from 'react-hook-form';
 import {
     Button,
@@ -10,7 +11,11 @@ import {
     Box,
 } from '@mui/material';
 import { BootstrapInput, styles } from './FormStyles';
+
+
 import { ErrorForm } from './ErrorForm';
+import { API_URL } from '../utils/url';
+
 export const Form = () => {
     const matches = useMediaQuery('(min-width:768px)');
     const {
@@ -21,7 +26,7 @@ export const Form = () => {
 
     const onSubmit = (data, e) => {
         e.preventDefault();
-        fetch('http://localhost:1337/mensajes/customMail', {
+        fetch(`${API_URL}/mensajes/customMail`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
