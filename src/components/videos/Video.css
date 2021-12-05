@@ -1,5 +1,5 @@
 .title-video {
-  margin: 1rem 0 0.5rem 0;
+  margin: 3rem 0 0.5rem 0;
   font-size: var(--font-size-h4);
   background: -webkit-linear-gradient(#607e06, #91b722);
   text-align: center;
@@ -9,10 +9,11 @@
   /* color: var(--mutual-color); */
 }
 .description-video {
+  line-height: 1.5;
   font-size: var(--font-size-paragraph);
   padding: 1rem 0 1rem 0rem;
   color: var(--paragraph-color);
-  line-height: 130%;
+  /* line-height: 160%; */
   text-align: center;
 }
 
@@ -52,7 +53,7 @@
 /* x-large  */
 @media (min-width: 1200px) {
   .title-video {
-    margin: 4rem 0 0 0;
+    margin: 5rem 0 0 0;
     text-align: center;
     font-size: var(--font-size-h1);
   }
