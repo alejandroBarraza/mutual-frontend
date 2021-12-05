@@ -5,16 +5,20 @@
   min-height: 8vh;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: white;
 }
 .navbar-mobile {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  /* position: relative; */
 }
 .logo-mobile {
-  height: 4rem;
+  height: 3rem;
   width: 4rem;
   display: flex;
   justify-content: center;
@@ -41,15 +45,15 @@ img {
   width: 100%;
   overflow: auto;
   position: absolute;
-  top: 8vh;
+  top: 9vh;
+  padding-top: 1rem;
   left: -100%;
   align-items: center;
   text-align: center;
   list-style-type: none;
   transition: all 0.5s ease;
-  opacity: 1;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: #FFFFFF;
+  
 }
 .navbar-mobile-menu.active {
   left: 0;

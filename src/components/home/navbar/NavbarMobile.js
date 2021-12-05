@@ -6,6 +6,8 @@ import { NavbarItem } from './NavbarItem';
 import { Link } from 'react-router-dom';
 import '../../../container.css';
 import './NavbarMobile.css';
+
+
 export const NavbarMobile = () => {
     const [navClicked, setnavClicked] = useState(!false);
     const handleClick = () => setnavClicked(!navClicked);
@@ -51,9 +53,10 @@ export const NavbarMobile = () => {
                         <li key={index}>
                             <Link className='navlinks' to={item.url} onClick={handleClick}>
                                 {item.title}
-                             </Link>
+                            </Link>
                         </li>
                 ))}
+                
             </ul>
         </div>
     );
