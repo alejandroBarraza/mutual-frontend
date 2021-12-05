@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { NavbarItem } from './NavbarItem';
 import './NavbarDesktop.css';
 import '../../../container.css';
-import { Link as Lonk, animateScroll as scroll } from "react-scroll";
+import { Link as Lonk} from "react-scroll";
 
 
 export const NavbarbarDesktop = () => {
