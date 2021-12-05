@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import MenuOpenRoundedIcon from '@mui/icons-material/MenuOpenRounded';
 import { Link as Lonk } from "react-scroll";
-import '../../../container.css';
-import './NavbarMobile.css';
 import { NavbarItem } from './NavbarItem';
 import { Link } from 'react-router-dom';
+import '../../../container.css';
+import './NavbarMobile.css';
 export const NavbarMobile = () => {
     const [navClicked, setnavClicked] = useState(!false);
     const handleClick = () => setnavClicked(!navClicked);
@@ -29,7 +29,11 @@ export const NavbarMobile = () => {
             <ul className={navClicked ? 'navbar-mobile-menu' : 'navbar-mobile-menu active'}>
                 {NavbarItem.map((item, index) => (
                     item.section != null ?
-                        <Lonk
+                        
+                        
+                        <li key={index}>
+                            <Lonk
+                            key={index}
                             activeClass="active"
                             to={item.section}
                             spy={true}
@@ -37,15 +41,17 @@ export const NavbarMobile = () => {
                             offset={-70}
                             duration={500}
                             onClick={handleClick}>
-                            <Link to={item.url}>
-                                <li key={index} >
-                                    <a href={item.url}>{item.title}</a>
-                                </li>
-                            </Link>
-                        </Lonk>
+                                <Link className='navlinks' to={item.url}>
+                                    {item.title}
+                                </Link>
+                            
+                            </Lonk>
+                        </li>
                         :
                         <li key={index}>
-                            <a href={item.url}>{item.title}</a>
+                            <Link className='navlinks' to={item.url} onClick={handleClick}>
+                                {item.title}
+                             </Link>
                         </li>
                 ))}
             </ul>
