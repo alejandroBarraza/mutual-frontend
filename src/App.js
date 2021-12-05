@@ -4,9 +4,11 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import './App.css';
 import { AppRouter } from './routers/AppRouter';
 import ScopedCssBaseline from '@mui/material/ScopedCssBaseline';
+import { API_URL } from './components/utils/url';
+
 
 export const client = new ApolloClient({
-    uri: 'http://localhost:1337/graphql',
+    uri: `${API_URL}/graphql`,
     cache: new InMemoryCache(),
 });
 
