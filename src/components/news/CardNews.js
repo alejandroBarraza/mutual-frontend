@@ -35,7 +35,7 @@ export const CardNews = ({ descriptionInfo, data, maxWidth }) => {
                             {titulo}
                         </Typography>
                         {descriptionInfo && (
-                            <Typography variant='body2' color='text.secondary' sx={{ height: '7rem', overflow: 'hidden' }}>
+                            <Typography variant='body2' color='text.secondary' sx={{ minHeight: '10rem', overflow: 'hidden', textAlign: 'justify' }}>
                                 {descripcion}
                             </Typography>
                         )}

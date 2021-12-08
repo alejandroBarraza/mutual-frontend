@@ -156,16 +156,16 @@ export const NewsById = () => {
                     </Box>
                 ) : null}
                 <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
-                    <Box sx={{ width: matches ? '80%' : '100%' }}>
+                    <Box sx={{ width: matches ? '80%' : '100%', display: 'flex', flexDirection: 'column' }}>
                         {data_procesed ? (
                             data_procesed.map((element, index) => {
                                 return (
                                     <Box
                                         key={index}
                                         sx={{
-                                            textAlign: element.includes('src') ? 'center' : 'left',
+                                            textAlign: element.includes('src') ? 'center' : 'justify',
                                             position: 'relative',
-                                            paddingBottom: '1.5rem',
+                                            paddingTop: element.includes('src') ? '1rem' : ''
                                         }}
                                     >
                                         <Markup content={element} />
