@@ -25,21 +25,21 @@ export const GETSTATISTICS = gql`
 
 // Images of the Carousel.
 export const IMAGES = gql`
-   query GetCarrusel {
-      carrusel {
-         titulo
-         descripcion
-         imagenes{
-            url
-         }
-      }
-   }`;
-
+    query GetCarrusel {
+        carrusel {
+            titulo
+            descripcion
+            imagenes {
+                url
+            }
+        }
+    }
+`;
 
 // News by ID query
 export const GETNEWSBYID = gql`
-query GetNewsById ($new: Int!){
-        news(where:{ id:$new}){
+    query GetNewsById($new: Int!) {
+        news(where: { id: $new }) {
             titulo
             cuerpo
             imagenDePresentacion {
@@ -106,15 +106,31 @@ export const GET_ALL_FOOTER = gql`
 
 export const GET_PRIORITY_DOWNLOADS = gql`
     query getNews {
-      downloads (where:{fijar:true}){
-        id
-        imagen{
-          url
+        downloads(where: { fijar: true }) {
+            id
+            imagen {
+                url
+            }
+            archivo {
+                url
+            }
+            fijar
         }
-        archivo{
-          url
+    }
+`;
+
+//getnews by id news
+
+export const GETNEWS_START_LIMIT_BYID = gql`
+    query getNews($limit: Int!, $start: Int!) {
+        news(limit: $limit, start: $start, sort: "created_at:desc") {
+            id
+            titulo
+            descripcion
+            tiempoLectura
+            imagen {
+                url
+            }
         }
-    	fijar
-      }
     }
 `;

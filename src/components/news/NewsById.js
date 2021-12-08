@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { GETNEWSBYID, GETNEWS_START_LIMIT } from '../../Graphql/Queries';
+import { GETNEWSBYID, GETNEWS_START_LIMIT_BYID } from '../../Graphql/Queries';
 import showdown from 'showdown';
 import { Markup } from 'interweave';
 import { Box, Container, Grid } from '@mui/material';
@@ -23,6 +23,16 @@ export const NewsById = () => {
      * @param error indicates if any error occurred.
      * @param data the data returned by the database.
      */
+
+    const {
+        data: dataNews,
+        loading,
+        error,
+    } = useQuery(GETNEWS_START_LIMIT_BYID, {
+        variables: { start: 0, limit: 3 },
+        fetchPolicy: 'no-cache',
+    });
+
     const {
         loading: loadingData,
         error: errorData,
@@ -30,13 +40,7 @@ export const NewsById = () => {
     } = useQuery(GETNEWSBYID, {
         variables: { new: parseInt(id) },
     });
-    const {
-        data: dataNews,
-        loading,
-        error,
-    } = useQuery(GETNEWS_START_LIMIT, {
-        variables: { start: 0, limit: 3 },
-    });
+
     const [title, setTitle] = useState('');
     const [presentationImage, setPresentationImage] = useState('#');
     const [data_procesed, setData_procesed] = useState([]);
@@ -45,7 +49,6 @@ export const NewsById = () => {
     useEffect(() => {
         setPresentationImage('#');
         if (data) {
-            // // console.log(data);
             if (data.news != null && data.news.length !== 0) {
                 let data_procesing = [];
                 let html = converter.makeHtml(data.news[0].cuerpo);
@@ -86,7 +89,8 @@ export const NewsById = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                }}>
+                }}
+            >
                 <p>Error in Data Base</p>
             </Box>
         );
@@ -99,14 +103,16 @@ export const NewsById = () => {
                 width: '100%',
                 position: 'relative',
                 pb: '2rem',
-            }}>
+            }}
+        >
             <Box
                 sx={{
                     bgcolor: '#C3D600',
                     height: presentationImage !== '#' ? '18rem' : '15rem',
                     width: '100%',
                     position: 'absolute',
-                }}></Box>
+                }}
+            ></Box>
             <Container sx={{ position: 'relative' }}>
                 {title ? (
                     <Typography component='div'>
@@ -120,7 +126,8 @@ export const NewsById = () => {
                                 color: '#fff',
                                 fontWeight: 'bold',
                                 fontSize: '2rem',
-                            }}>
+                            }}
+                        >
                             {title}
                         </Box>
                     </Typography>
@@ -133,7 +140,8 @@ export const NewsById = () => {
                 sx={{
                     position: 'relative',
                     py: presentationImage !== '#' ? '0rem' : '2rem',
-                }}>
+                }}
+            >
                 {presentationImage !== '#' ? (
                     <Box
                         sx={{
@@ -141,7 +149,8 @@ export const NewsById = () => {
                             display: 'flex',
                             justifyContent: 'center',
                             pb: '2rem',
-                        }}>
+                        }}
+                    >
                         <img src={presentationImage} alt='Imagen de Presentacion' />
                     </Box>
                 ) : null}
@@ -155,8 +164,9 @@ export const NewsById = () => {
                                         sx={{
                                             textAlign: element.includes('src') ? 'center' : 'left',
                                             position: 'relative',
-                                            paddingBottom: '1.5rem'
-                                        }}>
+                                            paddingBottom: '1.5rem',
+                                        }}
+                                    >
                                         <Markup content={element} />
                                     </Box>
                                 );
@@ -184,7 +194,8 @@ export const NewsById = () => {
                                     md={4}
                                     sx={{
                                         align: 'center',
-                                    }}>
+                                    }}
+                                >
                                     <CardNews
                                         descriptionInfo
                                         key={newData.id}
