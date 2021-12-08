@@ -13,8 +13,6 @@ import {
 import { BootstrapInput, styles } from './FormStyles';
 import { ErrorForm } from './ErrorForm';
 
-const { REACT_APP_BACKEND } = process.env;
-
 export const Form = () => {
     const matches = useMediaQuery('(min-width:768px)');
     const {
