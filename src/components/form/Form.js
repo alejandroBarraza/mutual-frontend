@@ -25,7 +25,7 @@ export const Form = () => {
 
     const onSubmit = (data, e) => {
         e.preventDefault();
-        fetch(`${REACT_APP_BACKEND}/mensajes/customMail`, {
+        fetch('https://aunteespero-admin.herokuapp.com//mensajes/customMail', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),

@@ -5,9 +5,9 @@ import './App.css';
 import { AppRouter } from './routers/AppRouter';
 import ScopedCssBaseline from '@mui/material/ScopedCssBaseline';
 
-const { REACT_APP_BACKEND } = process.env;
+// const { REACT_APP_BACKEND } = process.env;
 export const client = new ApolloClient({
-    uri: `${REACT_APP_BACKEND}/graphql`,
+    uri: 'https://aunteespero-admin.herokuapp.com/graphql',
     cache: new InMemoryCache(),
 });
 
