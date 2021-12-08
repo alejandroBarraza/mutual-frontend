@@ -17,7 +17,7 @@ export const Downloads = () => {
         return (
             <Typography
                 data-testid='no-content'
-                sx={{ color: 'var(--paragraph-color)', fontWeight: 700, pt: 2 }}
+                sx={{ color: 'var(--paragraph-color)', fontWeight: 700, pt: 2 ,height:'74vh',display:'flex',justifyContent:'center',alignItems:'center'}}
                 variant='h5'>
                 No hay contenido para descargar disponible.
             </Typography>
