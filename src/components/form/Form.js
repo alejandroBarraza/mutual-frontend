@@ -11,10 +11,9 @@ import {
     Box,
 } from '@mui/material';
 import { BootstrapInput, styles } from './FormStyles';
-
-
 import { ErrorForm } from './ErrorForm';
-import { API_URL } from '../utils/url';
+
+const { REACT_APP_BACKEND } = process.env;
 
 export const Form = () => {
     const matches = useMediaQuery('(min-width:768px)');
@@ -26,7 +25,7 @@ export const Form = () => {
 
     const onSubmit = (data, e) => {
         e.preventDefault();
-        fetch(`${API_URL}/mensajes/customMail`, {
+        fetch(`${REACT_APP_BACKEND}/mensajes/customMail`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
@@ -47,7 +46,8 @@ export const Form = () => {
                     noValidate
                     autoComplete='off'
                     onSubmit={handleSubmit(onSubmit)}
-                    sx={{ display: matches ? 'grid' : 'flex', ...styles.boxForm }}>
+                    sx={{ display: matches ? 'grid' : 'flex', ...styles.boxForm }}
+                >
                     <FormControl variant='standard'>
                         <InputLabel shrink htmlFor='bootstrap-input' sx={{ fontSize: '1.5rem' }}>
                             Nombre

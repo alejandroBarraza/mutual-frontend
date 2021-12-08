@@ -4,11 +4,10 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import './App.css';
 import { AppRouter } from './routers/AppRouter';
 import ScopedCssBaseline from '@mui/material/ScopedCssBaseline';
-import { API_URL } from './components/utils/url';
 
-
+const { REACT_APP_BACKEND } = process.env;
 export const client = new ApolloClient({
-    uri: `${API_URL}/graphql`,
+    uri: `${REACT_APP_BACKEND}/graphql`,
     cache: new InMemoryCache(),
 });
 
