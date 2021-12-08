@@ -45,6 +45,7 @@ export const NewsById = () => {
     const [presentationImage, setPresentationImage] = useState('#');
     const [data_procesed, setData_procesed] = useState([]);
     const matches = useMediaQuery('(min-width:60rem)');
+    const matches2 = useMediaQuery('(min-width:500px)');
 
     useEffect(() => {
         setPresentationImage('#');
@@ -125,7 +126,7 @@ export const NewsById = () => {
                                 height: presentationImage !== '#' ? '10rem' : '15rem',
                                 color: '#fff',
                                 fontWeight: 'bold',
-                                fontSize: '2rem',
+                                fontSize: matches2 ? '2rem' : '1rem',
                             }}
                         >
                             {title}

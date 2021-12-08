@@ -65,7 +65,7 @@ exports[`testing <Navbar/> component should match snapshot 1`] = `
       >
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1iwtne7-MuiTypography-root-MuiLink-root"
-          href="https://www.google.com"
+          href="https://aunteespero-backend.herokuapp.com/admin"
           rel="noopener"
           target="_blank"
         >
