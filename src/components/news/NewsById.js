@@ -126,7 +126,7 @@ export const NewsById = () => {
                                 height: presentationImage !== '#' ? '10rem' : '15rem',
                                 color: '#fff',
                                 fontWeight: 'bold',
-                                fontSize: matches2 ? '2rem' : '1rem',
+                                fontSize: matches2 ? '2rem' : '1.5rem',
                             }}
                         >
                             {title}
