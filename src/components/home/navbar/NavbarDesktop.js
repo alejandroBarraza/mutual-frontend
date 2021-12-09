@@ -5,8 +5,9 @@ import './NavbarDesktop.css';
 import '../../../container.css';
 import { Link as Lonk } from 'react-scroll';
 
+import { Tooltip, IconButton, Link as LinkMui, Box } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { Tooltip, IconButton, Link as LinkMui } from '@mui/material';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 export const NavbarbarDesktop = () => {
     return (
@@ -41,17 +42,30 @@ export const NavbarbarDesktop = () => {
                         )
                     )}
                 </ul>
-                <Tooltip title='Iniciar Sección'>
-                    <IconButton>
-                        <LinkMui
-                            href='https://aunteespero-admin.herokuapp.com/admin/'
-                            target='_blank'
-                            rel='noopener'
-                        >
-                            <AccountCircleIcon sx={{ color: '#91B722' }} />
-                        </LinkMui>
-                    </IconButton>
-                </Tooltip>
+                <Box>
+                    <Tooltip title='Instagram'>
+                        <IconButton>
+                            <LinkMui
+                                href='https://www.instagram.com/c.aunteespero/?hl=es-la'
+                                target='_blank'
+                                rel='noopener'
+                            >
+                                <InstagramIcon sx={{ color: '#91B722' }} />
+                            </LinkMui>
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip title='Iniciar Sección'>
+                        <IconButton>
+                            <LinkMui
+                                href='https://aunteespero-admin.herokuapp.com/admin/'
+                                target='_blank'
+                                rel='noopener'
+                            >
+                                <AccountCircleIcon sx={{ color: '#91B722' }} />
+                            </LinkMui>
+                        </IconButton>
+                    </Tooltip>
+                </Box>
             </nav>
         </div>
     );
