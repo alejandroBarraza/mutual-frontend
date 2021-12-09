@@ -4,11 +4,10 @@ import { Query } from '../utils/Query';
 import { YoutubeEmbed } from './YoutubeEmbed';
 import { GETVIDEOS } from '../../Graphql/Queries';
 
-
 import './Video.css';
 import '../../container.css';
 
-export const Video = () => {
+const Video = () => {
     return (
         <Query query={GETVIDEOS} id={null}>
             {({ data: { videos } }) => {
@@ -24,3 +23,4 @@ export const Video = () => {
         </Query>
     );
 };
+export default Video;

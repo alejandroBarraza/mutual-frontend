@@ -11,7 +11,7 @@ import { Loading } from '../utils/Loading';
 import { styles } from './StyleCardNewsView';
 import { CardNews } from './CardNews';
 
-export const CardNewsView = () => {
+const CardNewsView = () => {
     const handleFetchMore = () => {
         fetchMore({
             variables: {
@@ -38,11 +38,13 @@ export const CardNewsView = () => {
     if (error) return <ErrorUI error={error.message} />;
 
     return (
-        <div style={{
-            background: '#e5e5e583',
-            paddingTop: "2rem",
-            paddingBottom: "2rem",
-        }}>
+        <div
+            style={{
+                background: '#e5e5e583',
+                paddingTop: '2rem',
+                paddingBottom: '2rem',
+            }}
+        >
             <div className='container'>
                 <Box textAling='center' sx={styles.titleContainer}>
                     <Typography variant='h3'>Ultimas Noticias</Typography>
@@ -71,10 +73,10 @@ export const CardNewsView = () => {
                 </Box>
             </div>
         </div>
-
     );
 };
 
+export default CardNewsView;
 // add after
 // import debounce from 'lodash.debounce';
 // const debouncedChangeHandler = useCallback(debounce(handleFetchMore, 1000), []);
