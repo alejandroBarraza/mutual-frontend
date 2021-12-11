@@ -105,8 +105,8 @@ export const GET_ALL_FOOTER = gql`
 `;
 
 export const GET_PRIORITY_DOWNLOADS = gql`
-    query getNews {
-        downloads(where: { fijar: true }) {
+    query getNews($limit: Int!) {
+        downloads(limit: $limit, sort: "created_at:desc", where: { fijar: true }) {
             id
             imagen {
                 url
