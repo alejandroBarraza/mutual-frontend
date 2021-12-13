@@ -175,7 +175,7 @@ export const NewsById = () => {
                             <Skeleton variant='rectangular' width={'100%'} height={'100%'} />
                         )}
                     </Box>
-                    <Box sx={{ width: matches ? '20%' : '100%', pl: '2rem' }}>
+                    <Box sx={{ width: matches ? '20%' : '100%', pl: matches ? '2rem' : '0' }}>
                         <PriorityDownloads />
                     </Box>
                 </Box>
