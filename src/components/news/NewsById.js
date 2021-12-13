@@ -146,13 +146,12 @@ export const NewsById = () => {
                 {presentationImage !== '#' ? (
                     <Box
                         sx={{
-                            maxHeight: '20rem',
                             display: 'flex',
                             justifyContent: 'center',
                             pb: '2rem',
                         }}
                     >
-                        <img src={presentationImage} alt='Imagen de Presentacion' />
+                        <img src={presentationImage} alt='Imagen de Presentacion' style={{ maxHeight: '30rem', }} />
                     </Box>
                 ) : null}
                 <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>

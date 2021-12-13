@@ -21,7 +21,7 @@ exports[`Testing <CardNews/> component  render should march with snapshot 1`] = 
           class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-h93ljk-MuiTypography-root"
         />
         <p
-          class="MuiTypography-root MuiTypography-body2 css-1cav4l5-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-body2 css-r6rhmy-MuiTypography-root"
         />
       </div>
       <hr
