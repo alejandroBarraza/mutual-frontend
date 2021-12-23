@@ -45,14 +45,14 @@ export const Footer = () => {
                     alignItems='center'
                 >
                     <Grid item xs={12} md={4}>
-                        {data.footer.selloSeguridad ? (
+                        {data.footer ? (
                             <Typography variant='subtitle2' color='common.white' align='center'>
                                 {data.footer.selloSeguridad}
                             </Typography>
                         ) : null}
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        {data.footer.selloSeguridad ? (
+                        {data.footer ? (
                             <Typography variant='subtitle2' color='common.white' align='center'>
                                 {data.footer.descripcion}
                             </Typography>
