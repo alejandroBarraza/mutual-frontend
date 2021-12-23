@@ -60,7 +60,7 @@ export const Footer = () => {
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Box style={styles.socialContainer}>
-                            {data.footer.instagram ? (
+                            {data.footer ? (
                                 <Link href={data.footer.instagram} target='_blank' rel='noopener'>
                                     <InstagramIcon
                                         fontSize='medium'
@@ -68,7 +68,7 @@ export const Footer = () => {
                                     />
                                 </Link>
                             ) : null}
-                            {data.footer.facebook ? (
+                            {data.footer ? (
                                 <Link href={data.footer.facebook} target='_blank' rel='noopener'>
                                     <FacebookIcon
                                         fontSize='medium'
@@ -76,13 +76,13 @@ export const Footer = () => {
                                     />
                                 </Link>
                             ) : null}
-                            {data.footer.twitter ? (
+                            {data.footer ? (
                                 <Link href={data.footer.twitter} target='_blank' rel='noopener'>
                                     <TwitterIcon fontSize='medium' sx={{ color: 'white', mr: 3 }} />
                                 </Link>
                             ) : null}
 
-                            {data.footer.youtube ? (
+                            {data.footer ? (
                                 <Link href={data.footer.youtube} target='_blank' rel='noopener'>
                                     <YouTubeIcon fontSize='medium' sx={{ color: 'white', mr: 3 }} />
                                 </Link>
