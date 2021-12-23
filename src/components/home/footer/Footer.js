@@ -28,23 +28,35 @@ export const Footer = () => {
     if (!data) return null;
 
     return (
-        <Box sx={{
-            backgroundColor: 'var(--mutual-color)',
-            height: matches ? '14vh' : '12rem',
-            paddingTop: '1rem',
-            paddingBottom: '1rem',
-        }}>
+        <Box
+            sx={{
+                backgroundColor: 'var(--mutual-color)',
+                height: matches ? '14vh' : '12rem',
+                paddingTop: '1rem',
+                paddingBottom: '1rem',
+            }}
+        >
             <Box className='containerFooter'>
-                <Grid container spacing={2} direction="row" justifyContent="space-between" alignItems="center" >
+                <Grid
+                    container
+                    spacing={2}
+                    direction='row'
+                    justifyContent='space-between'
+                    alignItems='center'
+                >
                     <Grid item xs={12} md={4}>
-                        <Typography variant='subtitle2' color='common.white' align='center'>
-                            {data.footer.selloSeguridad}
-                        </Typography>
+                        {data.footer.selloSeguridad ? (
+                            <Typography variant='subtitle2' color='common.white' align='center'>
+                                {data.footer.selloSeguridad}
+                            </Typography>
+                        ) : null}
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <Typography variant='subtitle2' color='common.white' align='center'>
-                            {data.footer.descripcion}
-                        </Typography>
+                        {data.footer.selloSeguridad ? (
+                            <Typography variant='subtitle2' color='common.white' align='center'>
+                                {data.footer.descripcion}
+                            </Typography>
+                        ) : null}
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Box style={styles.socialContainer}>
@@ -79,6 +91,6 @@ export const Footer = () => {
                     </Grid>
                 </Grid>
             </Box>
-        </Box >
+        </Box>
     );
 };
